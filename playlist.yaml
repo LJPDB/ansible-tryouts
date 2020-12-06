@@ -1,0 +1,26 @@
+#- name: Reaching remote win server...
+#  hosts: win
+#  tasks:
+#    - name: Pinging server
+#      ansible.windows.win_ping:
+#        data: crash
+        
+- name: Reaching remote redhat server...
+  hosts: redhat
+  become: yes
+  tasks:
+    #- name: Pinging redhat server
+    #  ansible.netcommon.net_ping:
+    #    #dest: 10.10.10.10
+    #    data: crash
+    - name: create user
+      user:
+        name: usertest
+        state: present
+    - name: Power Off
+      azure_rm_virtualmachine:
+        resource_group: rg-ansible
+        name: vm-manual-redhat
+        started: no
+      delegate_to: localhost
+        #data: crash

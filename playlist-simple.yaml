@@ -1,0 +1,12 @@
+- name: Reaching remote digital ocean servers...
+  hosts: digoc
+  become: yes
+  tasks:
+    - name: Pinging servers
+      ping:
+        data: crash
+    
+    - name: create user
+      user:
+        name: usertest
+        state: present

@@ -1,0 +1,10 @@
+[win]
+10.0.0.4
+#51.103.25.29
+
+[redhat]
+20.73.40.128 ansible_sudo_pass=AnsibleBastion01.
+
+[digoc]
+188.166.24.188
+174.138.8.187
