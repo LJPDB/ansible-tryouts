@@ -3,8 +3,13 @@
 #51.103.25.29
 
 [redhat]
-20.73.40.128 ansible_sudo_pass=AnsibleBastion01.
+13.80.24.113
+#40.68.28.86
+#ansible_sudo_pass=AnsibleBastion01.
 
 [digoc]
 188.166.24.188
 174.138.8.187
+
+#[all:vars]
+#ansible_ssh_connection=ssh ansible_ssh_user=myuser ansible_ssh_private_key_file=~/.ssh/id_rsa

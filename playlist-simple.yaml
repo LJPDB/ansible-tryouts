@@ -1,12 +1,87 @@
 - name: Reaching remote digital ocean servers...
-  hosts: digoc
+  #hosts: digoc
+  #hosts: redhat
+  hosts: localhost
   become: yes
+  become_user: leonardopuga
+  no_log: False
+  gather_facts: False
+  #ask_become_pass: AnsibleBastion01.
+  vars:
+    var1: value1
+    var2: value2
+    ping: False
+    createuser: False
+    restart: False
+    poweroff: False
+    poweron: False
+    createvm: True
+    #subscription_id: 45d75553-0f88-4efd-b859-050ec7ab4fe7
+    #client_id: c2acf85a-f417-499f-9926-17823d127d8c
+    #secret: pV_mFMamitKCrF__RmWxZ1Aqz.X4SbfGej
+    #tenant: 405baca0-0b2e-4d29-89a4-bfa5acb1a117
   tasks:
     - name: Pinging servers
       ping:
         data: crash
-    
+      when: vars.ping
+      delegate_to: localhost
+
     - name: create user
       user:
         name: usertest
         state: present
+      when: vars.createuser
+
+    - name: Restart Redhat server
+      azure_rm_virtualmachine:
+        resource_group: rg-ansible
+        name: vm-manual-redhat-1
+        restarted: yes
+      when: vars.restart
+      delegate_to: localhost
+
+    - name: PowerOff Redhat VM
+      azure_rm_virtualmachine:
+        resource_group: rg-ansible
+        name: vm-manual-redhat-1
+        started: no
+      when: vars.poweroff
+      delegate_to: localhost
+
+    - name: PowerOn Redhat VM
+      azure_rm_virtualmachine:
+        resource_group: rg-ansible
+        name: vm-manual-redhat-1
+      when: vars.poweron
+      delegate_to: localhost
+
+    - name: Create VM with defaults
+      azure_rm_virtualmachine:
+        resource_group: rg-ansible
+        name: vm-autocreated-01
+        admin_username: leonardopuga
+        admin_password: AnsibleInventory01.
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.1'
+          version: latest
+        vm_size: Standard_B1ms
+        virtual_network_name: virtual-network-test-1
+        #network_interfaces: vm-manual-redhat-1283
+        #public_ip_allocation_method: Static
+        remove_on_absent: ["all"]
+      when: vars.createvm
+
+    - debug:
+        msg:
+          - "var1 = {{ var1 }}"
+          - "var2 = {{ var2 }}"
+          - "envvar = {{ lookup('env', 'TEST') }}"
+          - "ennvar2 = {{  lookup('env', 'TEST2') | default('not defined, so default...', True) }}"
+
+#- debug:
+#    msg: "var1"
+      
+
