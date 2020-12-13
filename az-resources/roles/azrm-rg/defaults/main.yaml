@@ -1,4 +1,4 @@
 rgs:
-  - name: rg-auto-ansible
+  - name: "{{vars.rg}}"
     location: westeurope
 

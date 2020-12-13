@@ -1,0 +1,10 @@
+- name: Create virtual network
+  azure_rm_virtualnetwork:
+    resource_group: "vars.rg"
+    name: "{{item.name}}"
+    address_prefixes: "{{item.add_pref}}"
+  loop: "{{vnets}}"
+  register: vnets
+  
+- debug:
+    msg: "VNets creation output: {{vnets}}"

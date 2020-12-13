@@ -2,7 +2,7 @@
   azure_rm_resourcegroup:
     name: "{{ item.name }}"
     location: "{{ item.location }}"
-  register: rg
+  register: rg_output
   loop: "{{ rgs }}"
 - debug:
-    var: rg
+    var: rg_output

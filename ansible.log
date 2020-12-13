@@ -4770,3 +4770,1411 @@ The offending line appears to be:
 }
 2020-12-13 19:23:25,621 p=30909 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
 2020-12-13 19:23:25,622 p=30909 u=leonardopuga n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-13 22:53:18,433 p=2288 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 22:53:18,788 p=2288 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 22:53:18,799 p=2288 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 22:53:19,878 p=2288 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 22:53:19,911 p=2288 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 22:53:21,286 p=2288 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'rg-auto-ansible', 'location': 'westeurope'})
+2020-12-13 22:53:21,299 p=2288 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 22:53:21,324 p=2288 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": false,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "rg-auto-ansible",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 22:53:21,336 p=2288 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 22:53:21,357 p=2288 u=leonardopuga n=ansible | fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'name' is undefined\n\nThe error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/roles/azrm-vnet/tasks/main.yaml': line 1, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Create virtual network\n  ^ here\n"}
+2020-12-13 22:53:21,358 p=2288 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 22:53:21,358 p=2288 u=leonardopuga n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-13 22:59:25,882 p=2481 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 22:59:26,240 p=2481 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 22:59:26,251 p=2481 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 22:59:27,328 p=2481 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 22:59:27,362 p=2481 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 22:59:28,799 p=2481 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'rg-auto-ansible', 'location': 'westeurope'})
+2020-12-13 22:59:28,813 p=2481 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 22:59:28,838 p=2481 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": false,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "rg-auto-ansible",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 22:59:28,850 p=2481 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 22:59:28,875 p=2481 u=leonardopuga n=ansible | fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'name' is undefined\n\nThe error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/roles/azrm-vnet/tasks/main.yaml': line 1, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Create virtual network\n  ^ here\n"}
+2020-12-13 22:59:28,877 p=2481 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 22:59:28,877 p=2481 u=leonardopuga n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:00:19,344 p=2592 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:00:19,699 p=2592 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:00:19,709 p=2592 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:00:20,807 p=2592 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:00:20,840 p=2592 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:00:22,254 p=2592 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'rg-auto-ansible', 'location': 'westeurope'})
+2020-12-13 23:00:22,267 p=2592 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 23:00:22,291 p=2592 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": false,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "rg-auto-ansible",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 23:00:22,303 p=2592 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 23:00:22,328 p=2592 u=leonardopuga n=ansible | fatal: [localhost]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'tem' is undefined\n\nThe error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/roles/azrm-vnet/tasks/main.yaml': line 1, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: Create virtual network\n  ^ here\n"}
+2020-12-13 23:00:22,331 p=2592 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:00:22,331 p=2592 u=leonardopuga n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:00:53,135 p=2693 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:00:53,492 p=2693 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:00:53,502 p=2693 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:00:54,620 p=2693 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:00:54,653 p=2693 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:00:56,052 p=2693 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'rg-auto-ansible', 'location': 'westeurope'})
+2020-12-13 23:00:56,066 p=2693 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 23:00:56,090 p=2693 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": false,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "rg-auto-ansible",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 23:00:56,102 p=2693 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 23:00:57,405 p=2693 u=leonardopuga n=ansible | [WARNING]: The value "{'results': [{'changed': False, 'contains_resources': False, 'state': {'id':
+'/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible', 'name': 'rg-auto-ansible', 'location': 'westeurope', 'tags': {},
+'provisioning_state': 'Succeeded'}, 'invocation': {'module_args': {'name': 'rg-auto-ansible', 'location': 'westeurope', 'auth_source': 'auto',
+'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'force_delete_nonempty': False, 'profile': None,
+'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None,
+'adfs_authority_url': None, 'tags': None}}, 'failed': False, 'item': {'name': 'rg-auto-ansible', 'location': 'westeurope'}, 'ansible_loop_var': 'item'}],
+'msg': 'All items completed', 'changed': False}" (type dict) was converted to ""{'results': [{'changed': False, 'contains_resources': False, 'state': {'id':
+'/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible', 'name': 'rg-auto-ansible', 'location': 'westeurope', 'tags': {},
+'provisioning_state': 'Succeeded'}, 'invocation': {'module_args': {'name': 'rg-auto-ansible', 'location': 'westeurope', 'auth_source': 'auto',
+'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'force_delete_nonempty': False, 'profile': None,
+'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None,
+'adfs_authority_url': None, 'tags': None}}, 'failed': False, 'item': {'name': 'rg-auto-ansible', 'location': 'westeurope'}, 'ansible_loop_var': 'item'}],
+'msg': 'All items completed', 'changed': False}"" (type string). If this does not look like what you expect, quote the entire value to ensure it does not
+change.
+
+2020-12-13 23:00:57,405 p=2693 u=leonardopuga n=ansible | failed: [localhost] (item={'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}) => {"ansible_loop_var": "item", "changed": false, "item": {"add_pref": "10.0.0.0/16", "name": "vnet-auto-ansible"}, "msg": "Error retrieving resource group {'results': [{'changed': False, 'contains_resources': False, 'state': {'id': '/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible', 'name': 'rg-auto-ansible', 'location': 'westeurope', 'tags': {}, 'provisioning_state': 'Succeeded'}, 'invocation': {'module_args': {'name': 'rg-auto-ansible', 'location': 'westeurope', 'auth_source': 'auto', 'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'force_delete_nonempty': False, 'profile': None, 'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None, 'adfs_authority_url': None, 'tags': None}}, 'failed': False, 'item': {'name': 'rg-auto-ansible', 'location': 'westeurope'}, 'ansible_loop_var': 'item'}], 'msg': 'All items completed', 'changed': False} - Parameter 'resource_group_name' must have length less than 90."}
+2020-12-13 23:00:57,408 p=2693 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:00:57,408 p=2693 u=leonardopuga n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:01:24,828 p=2826 u=leonardopuga n=ansible | ansible-playbook 2.10.3
+  config file = /home/leonardopuga/ansible-tryouts/ansible.cfg
+  configured module search path = ['/home/leonardopuga/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible
+  executable location = /home/leonardopuga/ansible-controller/bin/ansible-playbook
+  python version = 3.6.9 (default, Oct  8 2020, 12:12:24) [GCC 8.4.0]
+2020-12-13 23:01:24,828 p=2826 u=leonardopuga n=ansible | Using /home/leonardopuga/ansible-tryouts/ansible.cfg as config file
+2020-12-13 23:01:24,829 p=2826 u=leonardopuga n=ansible | setting up inventory plugins
+2020-12-13 23:01:24,854 p=2826 u=leonardopuga n=ansible | host_list declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:01:24,854 p=2826 u=leonardopuga n=ansible | script declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:01:24,857 p=2826 u=leonardopuga n=ansible | Parsed /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml inventory source with ini plugin
+2020-12-13 23:01:24,868 p=2826 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:01:25,183 p=2826 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:01:25,184 p=2826 u=leonardopuga n=ansible | Loading collection azure.azcollection from /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection
+2020-12-13 23:01:25,190 p=2826 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:01:25,205 p=2826 u=leonardopuga n=ansible | Loading callback plugin default of type stdout, v2.0 from /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/callback/default.py
+2020-12-13 23:01:25,221 p=2826 u=leonardopuga n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2020-12-13 23:01:25,221 p=2826 u=leonardopuga n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2020-12-13 23:01:25,221 p=2826 u=leonardopuga n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2020-12-13 23:01:25,222 p=2826 u=leonardopuga n=ansible | PLAYBOOK: playlist-az-resources.yaml *************************************************************************************************************************
+2020-12-13 23:01:25,222 p=2826 u=leonardopuga n=ansible | 1 plays in az-resources/playlist-az-resources.yaml
+2020-12-13 23:01:25,225 p=2826 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:01:25,235 p=2826 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:01:25,249 p=2833 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:01:25,250 p=2833 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:01:25,255 p=2833 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900485.255229-2833-230875236762180 `" && echo ansible-tmp-1607900485.255229-2833-230875236762180="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900485.255229-2833-230875236762180 `" ) && sleep 0'
+2020-12-13 23:01:25,622 p=2833 u=leonardopuga n=ansible | Using module file /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/modules/setup.py
+2020-12-13 23:01:25,623 p=2833 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-2826tjbfyo8c/tmpnjwl40tg TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900485.255229-2833-230875236762180/AnsiballZ_setup.py
+2020-12-13 23:01:25,624 p=2833 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900485.255229-2833-230875236762180/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900485.255229-2833-230875236762180/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:01:25,630 p=2833 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900485.255229-2833-230875236762180/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:01:26,307 p=2833 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900485.255229-2833-230875236762180/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:01:26,335 p=2826 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:01:26,345 p=2826 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:01:26,368 p=2826 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:01:26,394 p=2889 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:01:26,394 p=2889 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:01:26,400 p=2889 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900486.3996608-2889-17689056264882 `" && echo ansible-tmp-1607900486.3996608-2889-17689056264882="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900486.3996608-2889-17689056264882 `" ) && sleep 0'
+2020-12-13 23:01:26,408 p=2889 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:01:26,616 p=2889 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_resourcegroup.py
+2020-12-13 23:01:26,617 p=2889 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-2826tjbfyo8c/tmpvpzmv8sd TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900486.3996608-2889-17689056264882/AnsiballZ_azure_rm_resourcegroup.py
+2020-12-13 23:01:26,618 p=2889 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900486.3996608-2889-17689056264882/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900486.3996608-2889-17689056264882/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:01:26,624 p=2889 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900486.3996608-2889-17689056264882/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:01:27,720 p=2889 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900486.3996608-2889-17689056264882/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:01:27,737 p=2826 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'rg-auto-ansible', 'location': 'westeurope'}) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "contains_resources": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "force_delete_nonempty": false,
+            "location": "westeurope",
+            "name": "rg-auto-ansible",
+            "password": null,
+            "profile": null,
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "location": "westeurope",
+        "name": "rg-auto-ansible"
+    },
+    "state": {
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+        "location": "westeurope",
+        "name": "rg-auto-ansible",
+        "provisioning_state": "Succeeded",
+        "tags": {}
+    }
+}
+2020-12-13 23:01:27,750 p=2826 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 23:01:27,773 p=2826 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": false,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "rg-auto-ansible",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 23:01:27,785 p=2826 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 23:01:27,811 p=2920 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:01:27,811 p=2920 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:01:27,816 p=2920 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900487.8163385-2920-29852358110440 `" && echo ansible-tmp-1607900487.8163385-2920-29852358110440="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900487.8163385-2920-29852358110440 `" ) && sleep 0'
+2020-12-13 23:01:27,825 p=2920 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:01:28,037 p=2920 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualnetwork.py
+2020-12-13 23:01:28,038 p=2920 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-2826tjbfyo8c/tmp1t3nad73 TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900487.8163385-2920-29852358110440/AnsiballZ_azure_rm_virtualnetwork.py
+2020-12-13 23:01:28,038 p=2920 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900487.8163385-2920-29852358110440/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900487.8163385-2920-29852358110440/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:01:28,045 p=2920 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900487.8163385-2920-29852358110440/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:01:29,009 p=2920 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900487.8163385-2920-29852358110440/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:01:29,024 p=2826 u=leonardopuga n=ansible | The full traceback is:
+  File "/tmp/ansible_azure_rm_virtualnetwork_payload_amgqypli/ansible_azure_rm_virtualnetwork_payload.zip/ansible_collections/azure/azcollection/plugins/module_utils/azure_rm_common.py", line 560, in get_resource_group
+    return self.rm_client.resource_groups.get(resource_group)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/azure/mgmt/resource/resources/v2017_05_10/operations/_resource_groups_operations.py", line 268, in get
+    'resourceGroupName': self._serialize.url("resource_group_name", resource_group_name, 'str', max_length=90, min_length=1, pattern=r'^[-\w\._\(\)]+$'),
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/msrest/serialization.py", line 591, in url
+    data = self.validate(data, name, required=True, **kwargs)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/msrest/serialization.py", line 671, in validate
+    raise ValidationError(key, name, value)
+
+2020-12-13 23:01:29,025 p=2826 u=leonardopuga n=ansible | [WARNING]: The value "{'results': [{'changed': False, 'contains_resources': False, 'state': {'id':
+'/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible', 'name': 'rg-auto-ansible', 'location': 'westeurope', 'tags': {},
+'provisioning_state': 'Succeeded'}, 'invocation': {'module_args': {'name': 'rg-auto-ansible', 'location': 'westeurope', 'auth_source': 'auto',
+'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'force_delete_nonempty': False, 'profile': None,
+'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None,
+'adfs_authority_url': None, 'tags': None}}, 'failed': False, 'item': {'name': 'rg-auto-ansible', 'location': 'westeurope'}, 'ansible_loop_var': 'item'}],
+'msg': 'All items completed', 'changed': False}" (type dict) was converted to ""{'results': [{'changed': False, 'contains_resources': False, 'state': {'id':
+'/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible', 'name': 'rg-auto-ansible', 'location': 'westeurope', 'tags': {},
+'provisioning_state': 'Succeeded'}, 'invocation': {'module_args': {'name': 'rg-auto-ansible', 'location': 'westeurope', 'auth_source': 'auto',
+'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'force_delete_nonempty': False, 'profile': None,
+'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None,
+'adfs_authority_url': None, 'tags': None}}, 'failed': False, 'item': {'name': 'rg-auto-ansible', 'location': 'westeurope'}, 'ansible_loop_var': 'item'}],
+'msg': 'All items completed', 'changed': False}"" (type string). If this does not look like what you expect, quote the entire value to ensure it does not
+change.
+
+2020-12-13 23:01:29,027 p=2826 u=leonardopuga n=ansible | failed: [localhost] (item={'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "address_prefixes": "10.0.0.0/16",
+            "address_prefixes_cidr": [
+                "10.0.0.0/16"
+            ],
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "dns_servers": null,
+            "location": null,
+            "name": "vnet-auto-ansible",
+            "password": null,
+            "profile": null,
+            "purge_address_prefixes": false,
+            "purge_dns_servers": false,
+            "resource_group": "{'results': [{'changed': False, 'contains_resources': False, 'state': {'id': '/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible', 'name': 'rg-auto-ansible', 'location': 'westeurope', 'tags': {}, 'provisioning_state': 'Succeeded'}, 'invocation': {'module_args': {'name': 'rg-auto-ansible', 'location': 'westeurope', 'auth_source': 'auto', 'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'force_delete_nonempty': False, 'profile': None, 'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None, 'adfs_authority_url': None, 'tags': None}}, 'failed': False, 'item': {'name': 'rg-auto-ansible', 'location': 'westeurope'}, 'ansible_loop_var': 'item'}], 'msg': 'All items completed', 'changed': False}",
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "add_pref": "10.0.0.0/16",
+        "name": "vnet-auto-ansible"
+    },
+    "msg": "Error retrieving resource group {'results': [{'changed': False, 'contains_resources': False, 'state': {'id': '/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible', 'name': 'rg-auto-ansible', 'location': 'westeurope', 'tags': {}, 'provisioning_state': 'Succeeded'}, 'invocation': {'module_args': {'name': 'rg-auto-ansible', 'location': 'westeurope', 'auth_source': 'auto', 'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'force_delete_nonempty': False, 'profile': None, 'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None, 'adfs_authority_url': None, 'tags': None}}, 'failed': False, 'item': {'name': 'rg-auto-ansible', 'location': 'westeurope'}, 'ansible_loop_var': 'item'}], 'msg': 'All items completed', 'changed': False} - Parameter 'resource_group_name' must have length less than 90."
+}
+2020-12-13 23:01:29,031 p=2826 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:01:29,032 p=2826 u=leonardopuga n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:03:05,297 p=2969 u=leonardopuga n=ansible | ansible-playbook 2.10.3
+  config file = /home/leonardopuga/ansible-tryouts/ansible.cfg
+  configured module search path = ['/home/leonardopuga/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible
+  executable location = /home/leonardopuga/ansible-controller/bin/ansible-playbook
+  python version = 3.6.9 (default, Oct  8 2020, 12:12:24) [GCC 8.4.0]
+2020-12-13 23:03:05,298 p=2969 u=leonardopuga n=ansible | Using /home/leonardopuga/ansible-tryouts/ansible.cfg as config file
+2020-12-13 23:03:05,298 p=2969 u=leonardopuga n=ansible | setting up inventory plugins
+2020-12-13 23:03:05,324 p=2969 u=leonardopuga n=ansible | host_list declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:03:05,324 p=2969 u=leonardopuga n=ansible | script declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:03:05,327 p=2969 u=leonardopuga n=ansible | Parsed /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml inventory source with ini plugin
+2020-12-13 23:03:05,338 p=2969 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:03:05,660 p=2969 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:03:05,661 p=2969 u=leonardopuga n=ansible | Loading collection azure.azcollection from /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection
+2020-12-13 23:03:05,667 p=2969 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:03:05,683 p=2969 u=leonardopuga n=ansible | Loading callback plugin default of type stdout, v2.0 from /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/callback/default.py
+2020-12-13 23:03:05,699 p=2969 u=leonardopuga n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2020-12-13 23:03:05,699 p=2969 u=leonardopuga n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2020-12-13 23:03:05,699 p=2969 u=leonardopuga n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2020-12-13 23:03:05,700 p=2969 u=leonardopuga n=ansible | PLAYBOOK: playlist-az-resources.yaml *************************************************************************************************************************
+2020-12-13 23:03:05,700 p=2969 u=leonardopuga n=ansible | 1 plays in az-resources/playlist-az-resources.yaml
+2020-12-13 23:03:05,703 p=2969 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:03:05,713 p=2969 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:03:05,727 p=2975 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:03:05,727 p=2975 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:03:05,733 p=2975 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900585.7329733-2975-188393575987163 `" && echo ansible-tmp-1607900585.7329733-2975-188393575987163="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900585.7329733-2975-188393575987163 `" ) && sleep 0'
+2020-12-13 23:03:06,096 p=2975 u=leonardopuga n=ansible | Using module file /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/modules/setup.py
+2020-12-13 23:03:06,097 p=2975 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-2969u5wqt67m/tmpid9yhkwo TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900585.7329733-2975-188393575987163/AnsiballZ_setup.py
+2020-12-13 23:03:06,098 p=2975 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900585.7329733-2975-188393575987163/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900585.7329733-2975-188393575987163/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:03:06,105 p=2975 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900585.7329733-2975-188393575987163/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:03:06,754 p=2975 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900585.7329733-2975-188393575987163/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:03:06,782 p=2969 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:03:06,792 p=2969 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:03:06,816 p=2969 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:03:06,842 p=3031 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:03:06,842 p=3031 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:03:06,848 p=3031 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900586.8480356-3031-181962789374495 `" && echo ansible-tmp-1607900586.8480356-3031-181962789374495="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900586.8480356-3031-181962789374495 `" ) && sleep 0'
+2020-12-13 23:03:06,856 p=3031 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:03:07,066 p=3031 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_resourcegroup.py
+2020-12-13 23:03:07,067 p=3031 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-2969u5wqt67m/tmprr80qmei TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900586.8480356-3031-181962789374495/AnsiballZ_azure_rm_resourcegroup.py
+2020-12-13 23:03:07,068 p=3031 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900586.8480356-3031-181962789374495/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900586.8480356-3031-181962789374495/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:03:07,074 p=3031 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900586.8480356-3031-181962789374495/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:03:08,411 p=3031 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900586.8480356-3031-181962789374495/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:03:08,427 p=2969 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'rg-auto-ansible', 'location': 'westeurope'}) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "contains_resources": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "force_delete_nonempty": false,
+            "location": "westeurope",
+            "name": "rg-auto-ansible",
+            "password": null,
+            "profile": null,
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "location": "westeurope",
+        "name": "rg-auto-ansible"
+    },
+    "state": {
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+        "location": "westeurope",
+        "name": "rg-auto-ansible",
+        "provisioning_state": "Succeeded",
+        "tags": {}
+    }
+}
+2020-12-13 23:03:08,440 p=2969 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 23:03:08,463 p=2969 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": false,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "rg-auto-ansible",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 23:03:08,475 p=2969 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 23:03:08,499 p=3062 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:03:08,500 p=3062 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:03:08,505 p=3062 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900588.5053024-3062-207849465214479 `" && echo ansible-tmp-1607900588.5053024-3062-207849465214479="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900588.5053024-3062-207849465214479 `" ) && sleep 0'
+2020-12-13 23:03:08,513 p=3062 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:03:08,728 p=3062 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualnetwork.py
+2020-12-13 23:03:08,729 p=3062 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-2969u5wqt67m/tmpq9uzqrx0 TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900588.5053024-3062-207849465214479/AnsiballZ_azure_rm_virtualnetwork.py
+2020-12-13 23:03:08,730 p=3062 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900588.5053024-3062-207849465214479/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900588.5053024-3062-207849465214479/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:03:08,737 p=3062 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900588.5053024-3062-207849465214479/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:03:13,724 p=3062 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607900588.5053024-3062-207849465214479/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:03:13,739 p=2969 u=leonardopuga n=ansible | changed: [localhost] => (item={'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "check_mode": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "address_prefixes": "10.0.0.0/16",
+            "address_prefixes_cidr": [
+                "10.0.0.0/16"
+            ],
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "dns_servers": null,
+            "location": null,
+            "name": "vnet-auto-ansible",
+            "password": null,
+            "profile": null,
+            "purge_address_prefixes": false,
+            "purge_dns_servers": false,
+            "resource_group": "rg-auto-ansible",
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "add_pref": "10.0.0.0/16",
+        "name": "vnet-auto-ansible"
+    },
+    "state": {
+        "address_prefixes": [
+            "10.0.0.0/16"
+        ],
+        "etag": "W/\"d8bd99e7-0dde-4aed-b7c3-ff63a0b1e204\"",
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible",
+        "location": "westeurope",
+        "name": "vnet-auto-ansible",
+        "provisioning_state": "Succeeded",
+        "tags": null,
+        "type": "Microsoft.Network/virtualNetworks"
+    }
+}
+2020-12-13 23:03:13,751 p=2969 u=leonardopuga n=ansible | TASK [azrm-vnet : debug] *************************************************************************************************************************************
+2020-12-13 23:03:13,772 p=2969 u=leonardopuga n=ansible | ok: [localhost] => {
+    "msg": "VNets creation output: {'results': [{'changed': True, 'state': {'id': '/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible', 'name': 'vnet-auto-ansible', 'location': 'westeurope', 'type': 'Microsoft.Network/virtualNetworks', 'tags': None, 'provisioning_state': 'Succeeded', 'etag': 'W/\"d8bd99e7-0dde-4aed-b7c3-ff63a0b1e204\"', 'address_prefixes': ['10.0.0.0/16']}, 'check_mode': False, 'invocation': {'module_args': {'resource_group': 'rg-auto-ansible', 'name': 'vnet-auto-ansible', 'address_prefixes': '10.0.0.0/16', 'address_prefixes_cidr': ['10.0.0.0/16'], 'auth_source': 'auto', 'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'purge_address_prefixes': False, 'purge_dns_servers': False, 'profile': None, 'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None, 'adfs_authority_url': None, 'tags': None, 'location': None, 'dns_servers': None}}, 'failed': False, 'item': {'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}, 'ansible_loop_var': 'item'}], 'changed': True, 'msg': 'All items completed'}"
+}
+2020-12-13 23:03:13,783 p=2969 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:03:13,792 p=2969 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:03:13,793 p=2969 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:03:13,793 p=2969 u=leonardopuga n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:10:14,334 p=3226 u=leonardopuga n=ansible | ansible-playbook 2.10.3
+  config file = /home/leonardopuga/ansible-tryouts/ansible.cfg
+  configured module search path = ['/home/leonardopuga/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible
+  executable location = /home/leonardopuga/ansible-controller/bin/ansible-playbook
+  python version = 3.6.9 (default, Oct  8 2020, 12:12:24) [GCC 8.4.0]
+2020-12-13 23:10:14,334 p=3226 u=leonardopuga n=ansible | Using /home/leonardopuga/ansible-tryouts/ansible.cfg as config file
+2020-12-13 23:10:14,335 p=3226 u=leonardopuga n=ansible | setting up inventory plugins
+2020-12-13 23:10:14,360 p=3226 u=leonardopuga n=ansible | host_list declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:10:14,360 p=3226 u=leonardopuga n=ansible | script declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:10:14,365 p=3226 u=leonardopuga n=ansible | Parsed /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml inventory source with ini plugin
+2020-12-13 23:10:14,375 p=3226 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:10:14,692 p=3226 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:10:14,693 p=3226 u=leonardopuga n=ansible | Loading collection azure.azcollection from /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection
+2020-12-13 23:10:14,699 p=3226 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:10:14,714 p=3226 u=leonardopuga n=ansible | Loading callback plugin default of type stdout, v2.0 from /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/callback/default.py
+2020-12-13 23:10:14,730 p=3226 u=leonardopuga n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2020-12-13 23:10:14,731 p=3226 u=leonardopuga n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2020-12-13 23:10:14,731 p=3226 u=leonardopuga n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2020-12-13 23:10:14,731 p=3226 u=leonardopuga n=ansible | PLAYBOOK: playlist-az-resources.yaml *************************************************************************************************************************
+2020-12-13 23:10:14,732 p=3226 u=leonardopuga n=ansible | 1 plays in az-resources/playlist-az-resources.yaml
+2020-12-13 23:10:14,734 p=3226 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:10:14,744 p=3226 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:10:14,759 p=3232 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:10:14,759 p=3232 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:10:14,765 p=3232 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901014.7648702-3232-16070505470359 `" && echo ansible-tmp-1607901014.7648702-3232-16070505470359="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901014.7648702-3232-16070505470359 `" ) && sleep 0'
+2020-12-13 23:10:15,134 p=3232 u=leonardopuga n=ansible | Using module file /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/modules/setup.py
+2020-12-13 23:10:15,135 p=3232 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3226xvrcbav_/tmpajlsidxu TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901014.7648702-3232-16070505470359/AnsiballZ_setup.py
+2020-12-13 23:10:15,136 p=3232 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901014.7648702-3232-16070505470359/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901014.7648702-3232-16070505470359/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:10:15,142 p=3232 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901014.7648702-3232-16070505470359/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:10:15,820 p=3232 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901014.7648702-3232-16070505470359/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:10:15,848 p=3226 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:10:15,858 p=3226 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:10:15,882 p=3226 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:10:15,908 p=3288 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:10:15,908 p=3288 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:10:15,914 p=3288 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901015.9137268-3288-82148558281907 `" && echo ansible-tmp-1607901015.9137268-3288-82148558281907="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901015.9137268-3288-82148558281907 `" ) && sleep 0'
+2020-12-13 23:10:15,924 p=3288 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:10:16,153 p=3288 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_resourcegroup.py
+2020-12-13 23:10:16,154 p=3288 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3226xvrcbav_/tmp9rz3q1za TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901015.9137268-3288-82148558281907/AnsiballZ_azure_rm_resourcegroup.py
+2020-12-13 23:10:16,155 p=3288 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901015.9137268-3288-82148558281907/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901015.9137268-3288-82148558281907/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:10:16,161 p=3288 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901015.9137268-3288-82148558281907/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:10:17,465 p=3288 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901015.9137268-3288-82148558281907/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:10:17,480 p=3226 u=leonardopuga n=ansible | changed: [localhost] => (item={'name': 'vars.rg', 'location': 'westeurope'}) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "contains_resources": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "force_delete_nonempty": false,
+            "location": "westeurope",
+            "name": "vars.rg",
+            "password": null,
+            "profile": null,
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "location": "westeurope",
+        "name": "vars.rg"
+    },
+    "state": {
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg",
+        "location": "westeurope",
+        "name": "vars.rg",
+        "provisioning_state": "Succeeded",
+        "tags": null
+    }
+}
+2020-12-13 23:10:17,493 p=3226 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 23:10:17,517 p=3226 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg_output": {
+        "changed": true,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": true,
+                "contains_resources": false,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "vars.rg",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "vars.rg"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg",
+                    "location": "westeurope",
+                    "name": "vars.rg",
+                    "provisioning_state": "Succeeded",
+                    "tags": null
+                }
+            }
+        ]
+    }
+}
+2020-12-13 23:10:17,529 p=3226 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 23:10:17,553 p=3325 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:10:17,553 p=3325 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:10:17,559 p=3325 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901017.5590398-3325-41769402627364 `" && echo ansible-tmp-1607901017.5590398-3325-41769402627364="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901017.5590398-3325-41769402627364 `" ) && sleep 0'
+2020-12-13 23:10:17,567 p=3325 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:10:17,782 p=3325 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualnetwork.py
+2020-12-13 23:10:17,783 p=3325 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3226xvrcbav_/tmp0dh8g9mw TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901017.5590398-3325-41769402627364/AnsiballZ_azure_rm_virtualnetwork.py
+2020-12-13 23:10:17,783 p=3325 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901017.5590398-3325-41769402627364/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901017.5590398-3325-41769402627364/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:10:17,790 p=3325 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901017.5590398-3325-41769402627364/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:10:22,629 p=3325 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901017.5590398-3325-41769402627364/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:10:22,649 p=3226 u=leonardopuga n=ansible | changed: [localhost] => (item={'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}) => {
+    "ansible_loop_var": "item",
+    "changed": true,
+    "check_mode": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "address_prefixes": "10.0.0.0/16",
+            "address_prefixes_cidr": [
+                "10.0.0.0/16"
+            ],
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "dns_servers": null,
+            "location": null,
+            "name": "vnet-auto-ansible",
+            "password": null,
+            "profile": null,
+            "purge_address_prefixes": false,
+            "purge_dns_servers": false,
+            "resource_group": "vars.rg",
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "add_pref": "10.0.0.0/16",
+        "name": "vnet-auto-ansible"
+    },
+    "state": {
+        "address_prefixes": [
+            "10.0.0.0/16"
+        ],
+        "etag": "W/\"0302d2ef-44a9-4210-aabd-d09b3fd5f4fd\"",
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible",
+        "location": "westeurope",
+        "name": "vnet-auto-ansible",
+        "provisioning_state": "Succeeded",
+        "tags": null,
+        "type": "Microsoft.Network/virtualNetworks"
+    }
+}
+2020-12-13 23:10:22,663 p=3226 u=leonardopuga n=ansible | TASK [azrm-vnet : debug] *************************************************************************************************************************************
+2020-12-13 23:10:22,684 p=3226 u=leonardopuga n=ansible | ok: [localhost] => {
+    "msg": "VNets creation output: {'results': [{'changed': True, 'state': {'id': '/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible', 'name': 'vnet-auto-ansible', 'location': 'westeurope', 'type': 'Microsoft.Network/virtualNetworks', 'tags': None, 'provisioning_state': 'Succeeded', 'etag': 'W/\"0302d2ef-44a9-4210-aabd-d09b3fd5f4fd\"', 'address_prefixes': ['10.0.0.0/16']}, 'check_mode': False, 'invocation': {'module_args': {'resource_group': 'vars.rg', 'name': 'vnet-auto-ansible', 'address_prefixes': '10.0.0.0/16', 'address_prefixes_cidr': ['10.0.0.0/16'], 'auth_source': 'auto', 'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'purge_address_prefixes': False, 'purge_dns_servers': False, 'profile': None, 'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None, 'adfs_authority_url': None, 'tags': None, 'location': None, 'dns_servers': None}}, 'failed': False, 'item': {'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}, 'ansible_loop_var': 'item'}], 'changed': True, 'msg': 'All items completed'}"
+}
+2020-12-13 23:10:22,696 p=3226 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:10:22,706 p=3226 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:10:22,707 p=3226 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:10:22,707 p=3226 u=leonardopuga n=ansible | localhost                  : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:13:31,567 p=3432 u=leonardopuga n=ansible | ansible-playbook 2.10.3
+  config file = /home/leonardopuga/ansible-tryouts/ansible.cfg
+  configured module search path = ['/home/leonardopuga/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible
+  executable location = /home/leonardopuga/ansible-controller/bin/ansible-playbook
+  python version = 3.6.9 (default, Oct  8 2020, 12:12:24) [GCC 8.4.0]
+2020-12-13 23:13:31,568 p=3432 u=leonardopuga n=ansible | Using /home/leonardopuga/ansible-tryouts/ansible.cfg as config file
+2020-12-13 23:13:31,569 p=3432 u=leonardopuga n=ansible | setting up inventory plugins
+2020-12-13 23:13:31,594 p=3432 u=leonardopuga n=ansible | host_list declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:13:31,594 p=3432 u=leonardopuga n=ansible | script declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:13:31,599 p=3432 u=leonardopuga n=ansible | toml declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:13:31,600 p=3432 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with auto plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line 1 column 2 (char 1)  Syntax Error while loading YAML.   expected '<document
+start>', but found '<scalar>'  The error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml': line 2, column 1,
+but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:  [localhost:vars] rg=rg-auto-ansible ^ here
+
+2020-12-13 23:13:31,600 p=3432 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/auto.py", line 41, in parse
+    config_data = loader.load_from_file(path, cache=False)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/dataloader.py", line 97, in load_from_file
+    parsed_data = self.load(data=file_data, file_name=file_name, show_content=show_content, json_only=json_only)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/dataloader.py", line 80, in load
+    return from_yaml(data, file_name, show_content, self._vault.secrets, json_only=json_only)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/utils/yaml.py", line 81, in from_yaml
+    _handle_error(json_exc, yaml_exc, file_name, show_content)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/utils/yaml.py", line 42, in _handle_error
+    raise AnsibleParserError(to_native(err_msg), obj=err_obj, show_content=show_content, orig_exc=yaml_exc)
+
+2020-12-13 23:13:31,601 p=3432 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with yaml plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line 1 column 2 (char 1)  Syntax Error while loading YAML.   expected '<document
+start>', but found '<scalar>'  The error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml': line 2, column 1,
+but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:  [localhost:vars] rg=rg-auto-ansible ^ here
+
+2020-12-13 23:13:31,601 p=3432 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/yaml.py", line 105, in parse
+    raise AnsibleParserError(e)
+
+2020-12-13 23:13:31,601 p=3432 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with ini plugin: /home/leonardopuga/ansible-
+tryouts/az-resources/inventory-az-resources.yaml:1: Section [localhost:vars] not valid for undefined group: localhost
+
+2020-12-13 23:13:31,601 p=3432 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/ini.py", line 138, in parse
+    raise AnsibleParserError(e)
+
+2020-12-13 23:13:31,601 p=3432 u=leonardopuga n=ansible | [WARNING]: Unable to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as an inventory source
+
+2020-12-13 23:13:31,602 p=3432 u=leonardopuga n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2020-12-13 23:13:31,612 p=3432 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:13:31,932 p=3432 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:13:31,933 p=3432 u=leonardopuga n=ansible | Loading collection azure.azcollection from /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection
+2020-12-13 23:13:31,939 p=3432 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:13:31,955 p=3432 u=leonardopuga n=ansible | Loading callback plugin default of type stdout, v2.0 from /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/callback/default.py
+2020-12-13 23:13:31,971 p=3432 u=leonardopuga n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2020-12-13 23:13:31,971 p=3432 u=leonardopuga n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2020-12-13 23:13:31,971 p=3432 u=leonardopuga n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2020-12-13 23:13:31,972 p=3432 u=leonardopuga n=ansible | PLAYBOOK: playlist-az-resources.yaml *************************************************************************************************************************
+2020-12-13 23:13:31,972 p=3432 u=leonardopuga n=ansible | 1 plays in az-resources/playlist-az-resources.yaml
+2020-12-13 23:13:31,975 p=3432 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:13:31,985 p=3432 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:13:31,999 p=3439 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:13:32,000 p=3439 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:13:32,006 p=3439 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901212.0056422-3439-75579849526196 `" && echo ansible-tmp-1607901212.0056422-3439-75579849526196="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901212.0056422-3439-75579849526196 `" ) && sleep 0'
+2020-12-13 23:13:32,370 p=3439 u=leonardopuga n=ansible | Using module file /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/modules/setup.py
+2020-12-13 23:13:32,371 p=3439 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3432s_v_9k21/tmp82i9852p TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901212.0056422-3439-75579849526196/AnsiballZ_setup.py
+2020-12-13 23:13:32,372 p=3439 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901212.0056422-3439-75579849526196/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901212.0056422-3439-75579849526196/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:13:32,378 p=3439 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901212.0056422-3439-75579849526196/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:13:33,047 p=3439 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901212.0056422-3439-75579849526196/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:13:33,076 p=3432 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:13:33,087 p=3432 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:13:33,111 p=3432 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:13:33,138 p=3495 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:13:33,138 p=3495 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:13:33,146 p=3495 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901213.1453578-3495-20206503865556 `" && echo ansible-tmp-1607901213.1453578-3495-20206503865556="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901213.1453578-3495-20206503865556 `" ) && sleep 0'
+2020-12-13 23:13:33,155 p=3495 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:13:33,363 p=3495 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_resourcegroup.py
+2020-12-13 23:13:33,364 p=3495 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3432s_v_9k21/tmpxmobll9u TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901213.1453578-3495-20206503865556/AnsiballZ_azure_rm_resourcegroup.py
+2020-12-13 23:13:33,365 p=3495 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901213.1453578-3495-20206503865556/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901213.1453578-3495-20206503865556/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:13:33,371 p=3495 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901213.1453578-3495-20206503865556/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:13:34,493 p=3495 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901213.1453578-3495-20206503865556/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:13:34,509 p=3432 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'vars.rg', 'location': 'westeurope'}) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "contains_resources": true,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "force_delete_nonempty": false,
+            "location": "westeurope",
+            "name": "vars.rg",
+            "password": null,
+            "profile": null,
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "location": "westeurope",
+        "name": "vars.rg"
+    },
+    "state": {
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg",
+        "location": "westeurope",
+        "name": "vars.rg",
+        "provisioning_state": "Succeeded",
+        "tags": {}
+    }
+}
+2020-12-13 23:13:34,521 p=3432 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 23:13:34,545 p=3432 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg_output": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": true,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "vars.rg",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "vars.rg"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg",
+                    "location": "westeurope",
+                    "name": "vars.rg",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 23:13:34,557 p=3432 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 23:13:34,581 p=3526 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:13:34,581 p=3526 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:13:34,587 p=3526 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901214.586997-3526-189341414860066 `" && echo ansible-tmp-1607901214.586997-3526-189341414860066="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901214.586997-3526-189341414860066 `" ) && sleep 0'
+2020-12-13 23:13:34,596 p=3526 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:13:34,809 p=3526 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualnetwork.py
+2020-12-13 23:13:34,810 p=3526 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3432s_v_9k21/tmphayfx8ud TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901214.586997-3526-189341414860066/AnsiballZ_azure_rm_virtualnetwork.py
+2020-12-13 23:13:34,811 p=3526 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901214.586997-3526-189341414860066/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901214.586997-3526-189341414860066/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:13:34,817 p=3526 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901214.586997-3526-189341414860066/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:13:36,108 p=3526 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901214.586997-3526-189341414860066/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:13:36,123 p=3432 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "check_mode": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "address_prefixes": "10.0.0.0/16",
+            "address_prefixes_cidr": [
+                "10.0.0.0/16"
+            ],
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "dns_servers": null,
+            "location": null,
+            "name": "vnet-auto-ansible",
+            "password": null,
+            "profile": null,
+            "purge_address_prefixes": false,
+            "purge_dns_servers": false,
+            "resource_group": "vars.rg",
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "add_pref": "10.0.0.0/16",
+        "name": "vnet-auto-ansible"
+    },
+    "state": {
+        "address_prefixes": [
+            "10.0.0.0/16"
+        ],
+        "etag": "W/\"0302d2ef-44a9-4210-aabd-d09b3fd5f4fd\"",
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible",
+        "location": "westeurope",
+        "name": "vnet-auto-ansible",
+        "provisioning_state": "Succeeded",
+        "tags": {},
+        "type": "Microsoft.Network/virtualNetworks"
+    }
+}
+2020-12-13 23:13:36,136 p=3432 u=leonardopuga n=ansible | TASK [azrm-vnet : debug] *************************************************************************************************************************************
+2020-12-13 23:13:36,162 p=3432 u=leonardopuga n=ansible | ok: [localhost] => {
+    "msg": "VNets creation output: {'results': [{'changed': False, 'state': {'id': '/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible', 'name': 'vnet-auto-ansible', 'location': 'westeurope', 'type': 'Microsoft.Network/virtualNetworks', 'tags': {}, 'provisioning_state': 'Succeeded', 'etag': 'W/\"0302d2ef-44a9-4210-aabd-d09b3fd5f4fd\"', 'address_prefixes': ['10.0.0.0/16']}, 'check_mode': False, 'invocation': {'module_args': {'resource_group': 'vars.rg', 'name': 'vnet-auto-ansible', 'address_prefixes': '10.0.0.0/16', 'address_prefixes_cidr': ['10.0.0.0/16'], 'auth_source': 'auto', 'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'purge_address_prefixes': False, 'purge_dns_servers': False, 'profile': None, 'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None, 'adfs_authority_url': None, 'tags': None, 'location': None, 'dns_servers': None}}, 'failed': False, 'item': {'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}, 'ansible_loop_var': 'item'}], 'msg': 'All items completed', 'changed': False}"
+}
+2020-12-13 23:13:36,175 p=3432 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:13:36,184 p=3432 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:13:36,185 p=3432 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:13:36,185 p=3432 u=leonardopuga n=ansible | localhost                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:14:29,170 p=3583 u=leonardopuga n=ansible | ansible-playbook 2.10.3
+  config file = /home/leonardopuga/ansible-tryouts/ansible.cfg
+  configured module search path = ['/home/leonardopuga/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible
+  executable location = /home/leonardopuga/ansible-controller/bin/ansible-playbook
+  python version = 3.6.9 (default, Oct  8 2020, 12:12:24) [GCC 8.4.0]
+2020-12-13 23:14:29,170 p=3583 u=leonardopuga n=ansible | Using /home/leonardopuga/ansible-tryouts/ansible.cfg as config file
+2020-12-13 23:14:29,171 p=3583 u=leonardopuga n=ansible | setting up inventory plugins
+2020-12-13 23:14:29,196 p=3583 u=leonardopuga n=ansible | host_list declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:14:29,196 p=3583 u=leonardopuga n=ansible | script declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:14:29,200 p=3583 u=leonardopuga n=ansible | toml declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:14:29,201 p=3583 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with auto plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line 1 column 2 (char 1)  Syntax Error while loading YAML.   expected '<document
+start>', but found '<scalar>'  The error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml': line 2, column 1,
+but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:  [localhost:vars] rg=rg-auto-ansible ^ here
+
+2020-12-13 23:14:29,201 p=3583 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/auto.py", line 41, in parse
+    config_data = loader.load_from_file(path, cache=False)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/dataloader.py", line 97, in load_from_file
+    parsed_data = self.load(data=file_data, file_name=file_name, show_content=show_content, json_only=json_only)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/dataloader.py", line 80, in load
+    return from_yaml(data, file_name, show_content, self._vault.secrets, json_only=json_only)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/utils/yaml.py", line 81, in from_yaml
+    _handle_error(json_exc, yaml_exc, file_name, show_content)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/utils/yaml.py", line 42, in _handle_error
+    raise AnsibleParserError(to_native(err_msg), obj=err_obj, show_content=show_content, orig_exc=yaml_exc)
+
+2020-12-13 23:14:29,202 p=3583 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with yaml plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line 1 column 2 (char 1)  Syntax Error while loading YAML.   expected '<document
+start>', but found '<scalar>'  The error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml': line 2, column 1,
+but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:  [localhost:vars] rg=rg-auto-ansible ^ here
+
+2020-12-13 23:14:29,202 p=3583 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/yaml.py", line 105, in parse
+    raise AnsibleParserError(e)
+
+2020-12-13 23:14:29,202 p=3583 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with ini plugin: /home/leonardopuga/ansible-
+tryouts/az-resources/inventory-az-resources.yaml:1: Section [localhost:vars] not valid for undefined group: localhost
+
+2020-12-13 23:14:29,203 p=3583 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/ini.py", line 138, in parse
+    raise AnsibleParserError(e)
+
+2020-12-13 23:14:29,203 p=3583 u=leonardopuga n=ansible | [WARNING]: Unable to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as an inventory source
+
+2020-12-13 23:14:29,203 p=3583 u=leonardopuga n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2020-12-13 23:14:29,213 p=3583 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:14:29,530 p=3583 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:14:29,531 p=3583 u=leonardopuga n=ansible | Loading collection azure.azcollection from /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection
+2020-12-13 23:14:29,537 p=3583 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:14:29,552 p=3583 u=leonardopuga n=ansible | Loading callback plugin default of type stdout, v2.0 from /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/callback/default.py
+2020-12-13 23:14:29,568 p=3583 u=leonardopuga n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2020-12-13 23:14:29,568 p=3583 u=leonardopuga n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2020-12-13 23:14:29,568 p=3583 u=leonardopuga n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2020-12-13 23:14:29,569 p=3583 u=leonardopuga n=ansible | PLAYBOOK: playlist-az-resources.yaml *************************************************************************************************************************
+2020-12-13 23:14:29,569 p=3583 u=leonardopuga n=ansible | 1 plays in az-resources/playlist-az-resources.yaml
+2020-12-13 23:14:29,572 p=3583 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:14:29,582 p=3583 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:14:29,596 p=3589 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:14:29,597 p=3589 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:14:29,603 p=3589 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901269.6024005-3589-150255105909278 `" && echo ansible-tmp-1607901269.6024005-3589-150255105909278="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901269.6024005-3589-150255105909278 `" ) && sleep 0'
+2020-12-13 23:14:29,969 p=3589 u=leonardopuga n=ansible | Using module file /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/modules/setup.py
+2020-12-13 23:14:29,970 p=3589 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-35838ysm9ct2/tmpxuksd51z TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901269.6024005-3589-150255105909278/AnsiballZ_setup.py
+2020-12-13 23:14:29,971 p=3589 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901269.6024005-3589-150255105909278/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901269.6024005-3589-150255105909278/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:14:29,977 p=3589 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901269.6024005-3589-150255105909278/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:14:30,637 p=3589 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901269.6024005-3589-150255105909278/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:14:30,664 p=3583 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:14:30,675 p=3583 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:14:30,699 p=3583 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:14:30,718 p=3583 u=leonardopuga n=ansible | fatal: [localhost]: FAILED! => {
+    "msg": "[AnsibleMapping([('name', '{{vars.rg}}'), ('location', 'westeurope')])]: 'dict object' has no attribute 'rg'"
+}
+2020-12-13 23:14:30,721 p=3583 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:14:30,721 p=3583 u=leonardopuga n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-12-13 23:17:52,711 p=3710 u=leonardopuga n=ansible | ansible-playbook 2.10.3
+  config file = /home/leonardopuga/ansible-tryouts/ansible.cfg
+  configured module search path = ['/home/leonardopuga/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible
+  executable location = /home/leonardopuga/ansible-controller/bin/ansible-playbook
+  python version = 3.6.9 (default, Oct  8 2020, 12:12:24) [GCC 8.4.0]
+2020-12-13 23:17:52,711 p=3710 u=leonardopuga n=ansible | Using /home/leonardopuga/ansible-tryouts/ansible.cfg as config file
+2020-12-13 23:17:52,712 p=3710 u=leonardopuga n=ansible | setting up inventory plugins
+2020-12-13 23:17:52,737 p=3710 u=leonardopuga n=ansible | host_list declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:17:52,738 p=3710 u=leonardopuga n=ansible | script declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:17:52,742 p=3710 u=leonardopuga n=ansible | toml declined parsing /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as it did not pass its verify_file() method
+2020-12-13 23:17:52,743 p=3710 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with auto plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line 1 column 2 (char 1)  Syntax Error while loading YAML.   expected '<document
+start>', but found '<scalar>'  The error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml': line 2, column 1,
+but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:  [localhost:vars] rg=rg-auto-ansible ^ here
+
+2020-12-13 23:17:52,743 p=3710 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/auto.py", line 41, in parse
+    config_data = loader.load_from_file(path, cache=False)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/dataloader.py", line 97, in load_from_file
+    parsed_data = self.load(data=file_data, file_name=file_name, show_content=show_content, json_only=json_only)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/dataloader.py", line 80, in load
+    return from_yaml(data, file_name, show_content, self._vault.secrets, json_only=json_only)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/utils/yaml.py", line 81, in from_yaml
+    _handle_error(json_exc, yaml_exc, file_name, show_content)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/parsing/utils/yaml.py", line 42, in _handle_error
+    raise AnsibleParserError(to_native(err_msg), obj=err_obj, show_content=show_content, orig_exc=yaml_exc)
+
+2020-12-13 23:17:52,744 p=3710 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with yaml plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: Expecting value: line 1 column 2 (char 1)  Syntax Error while loading YAML.   expected '<document
+start>', but found '<scalar>'  The error appears to be in '/home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml': line 2, column 1,
+but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:  [localhost:vars] rg=rg-auto-ansible ^ here
+
+2020-12-13 23:17:52,744 p=3710 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/yaml.py", line 105, in parse
+    raise AnsibleParserError(e)
+
+2020-12-13 23:17:52,744 p=3710 u=leonardopuga n=ansible | [WARNING]:  * Failed to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml with ini plugin: /home/leonardopuga/ansible-
+tryouts/az-resources/inventory-az-resources.yaml:1: Section [localhost:vars] not valid for undefined group: localhost
+
+2020-12-13 23:17:52,744 p=3710 u=leonardopuga n=ansible |   File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/inventory/manager.py", line 289, in parse_source
+    plugin.parse(self._inventory, self._loader, source, cache=cache)
+  File "/home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/inventory/ini.py", line 138, in parse
+    raise AnsibleParserError(e)
+
+2020-12-13 23:17:52,745 p=3710 u=leonardopuga n=ansible | [WARNING]: Unable to parse /home/leonardopuga/ansible-tryouts/az-resources/inventory-az-resources.yaml as an inventory source
+
+2020-12-13 23:17:52,745 p=3710 u=leonardopuga n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2020-12-13 23:17:52,755 p=3710 u=leonardopuga n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2020-12-13 23:17:53,074 p=3710 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:17:53,074 p=3710 u=leonardopuga n=ansible | Loading collection azure.azcollection from /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection
+2020-12-13 23:17:53,080 p=3710 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:17:53,096 p=3710 u=leonardopuga n=ansible | Loading callback plugin default of type stdout, v2.0 from /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/plugins/callback/default.py
+2020-12-13 23:17:53,112 p=3710 u=leonardopuga n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2020-12-13 23:17:53,112 p=3710 u=leonardopuga n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2020-12-13 23:17:53,113 p=3710 u=leonardopuga n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2020-12-13 23:17:53,113 p=3710 u=leonardopuga n=ansible | PLAYBOOK: playlist-az-resources.yaml *************************************************************************************************************************
+2020-12-13 23:17:53,113 p=3710 u=leonardopuga n=ansible | 1 plays in az-resources/playlist-az-resources.yaml
+2020-12-13 23:17:53,116 p=3710 u=leonardopuga n=ansible | PLAY [Create Azure Resources] ********************************************************************************************************************************
+2020-12-13 23:17:53,126 p=3710 u=leonardopuga n=ansible | TASK [Gathering Facts] ***************************************************************************************************************************************
+2020-12-13 23:17:53,140 p=3716 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:17:53,141 p=3716 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:17:53,147 p=3716 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901473.146367-3716-182228272021168 `" && echo ansible-tmp-1607901473.146367-3716-182228272021168="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901473.146367-3716-182228272021168 `" ) && sleep 0'
+2020-12-13 23:17:53,513 p=3716 u=leonardopuga n=ansible | Using module file /home/leonardopuga/ansible-controller/lib/python3.6/site-packages/ansible/modules/setup.py
+2020-12-13 23:17:53,514 p=3716 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3710obi_gi48/tmppx1z8rtz TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901473.146367-3716-182228272021168/AnsiballZ_setup.py
+2020-12-13 23:17:53,515 p=3716 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901473.146367-3716-182228272021168/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901473.146367-3716-182228272021168/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:17:53,521 p=3716 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901473.146367-3716-182228272021168/AnsiballZ_setup.py && sleep 0'
+2020-12-13 23:17:54,189 p=3716 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901473.146367-3716-182228272021168/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:17:54,218 p=3710 u=leonardopuga n=ansible | ok: [localhost]
+2020-12-13 23:17:54,228 p=3710 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:17:54,253 p=3710 u=leonardopuga n=ansible | TASK [azrm-rg : Creating resource group - "{{ name }}"] ******************************************************************************************************
+2020-12-13 23:17:54,280 p=3772 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:17:54,281 p=3772 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:17:54,286 p=3772 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901474.2863348-3772-160683817327548 `" && echo ansible-tmp-1607901474.2863348-3772-160683817327548="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901474.2863348-3772-160683817327548 `" ) && sleep 0'
+2020-12-13 23:17:54,295 p=3772 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_resourcegroup to azure.azcollection.azure_rm_resourcegroup
+2020-12-13 23:17:54,522 p=3772 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_resourcegroup.py
+2020-12-13 23:17:54,523 p=3772 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3710obi_gi48/tmpuxmfhggt TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901474.2863348-3772-160683817327548/AnsiballZ_azure_rm_resourcegroup.py
+2020-12-13 23:17:54,524 p=3772 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901474.2863348-3772-160683817327548/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901474.2863348-3772-160683817327548/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:17:54,531 p=3772 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901474.2863348-3772-160683817327548/AnsiballZ_azure_rm_resourcegroup.py && sleep 0'
+2020-12-13 23:17:55,665 p=3772 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901474.2863348-3772-160683817327548/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:17:55,681 p=3710 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'rg-auto-ansible', 'location': 'westeurope'}) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "contains_resources": true,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "force_delete_nonempty": false,
+            "location": "westeurope",
+            "name": "rg-auto-ansible",
+            "password": null,
+            "profile": null,
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "location": "westeurope",
+        "name": "rg-auto-ansible"
+    },
+    "state": {
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+        "location": "westeurope",
+        "name": "rg-auto-ansible",
+        "provisioning_state": "Succeeded",
+        "tags": {}
+    }
+}
+2020-12-13 23:17:55,693 p=3710 u=leonardopuga n=ansible | TASK [azrm-rg : debug] ***************************************************************************************************************************************
+2020-12-13 23:17:55,717 p=3710 u=leonardopuga n=ansible | ok: [localhost] => {
+    "rg_output": {
+        "changed": false,
+        "msg": "All items completed",
+        "results": [
+            {
+                "ansible_loop_var": "item",
+                "changed": false,
+                "contains_resources": true,
+                "failed": false,
+                "invocation": {
+                    "module_args": {
+                        "ad_user": null,
+                        "adfs_authority_url": null,
+                        "api_profile": "latest",
+                        "append_tags": true,
+                        "auth_source": "auto",
+                        "cert_validation_mode": null,
+                        "client_id": null,
+                        "cloud_environment": "AzureCloud",
+                        "force_delete_nonempty": false,
+                        "location": "westeurope",
+                        "name": "rg-auto-ansible",
+                        "password": null,
+                        "profile": null,
+                        "secret": null,
+                        "state": "present",
+                        "subscription_id": null,
+                        "tags": null,
+                        "tenant": null
+                    }
+                },
+                "item": {
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible"
+                },
+                "state": {
+                    "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible",
+                    "location": "westeurope",
+                    "name": "rg-auto-ansible",
+                    "provisioning_state": "Succeeded",
+                    "tags": {}
+                }
+            }
+        ]
+    }
+}
+2020-12-13 23:17:55,728 p=3710 u=leonardopuga n=ansible | TASK [azrm-vnet : Create virtual network] ********************************************************************************************************************
+2020-12-13 23:17:55,752 p=3803 u=leonardopuga n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: leonardopuga
+2020-12-13 23:17:55,752 p=3803 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~leonardopuga && sleep 0'
+2020-12-13 23:17:55,758 p=3803 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/leonardopuga/.ansible/tmp `"&& mkdir "` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901475.7575204-3803-242032684488046 `" && echo ansible-tmp-1607901475.7575204-3803-242032684488046="` echo /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901475.7575204-3803-242032684488046 `" ) && sleep 0'
+2020-12-13 23:17:55,766 p=3803 u=leonardopuga n=ansible | redirecting (type: modules) ansible.builtin.azure_rm_virtualnetwork to azure.azcollection.azure_rm_virtualnetwork
+2020-12-13 23:17:55,978 p=3803 u=leonardopuga n=ansible | Using module file /home/leonardopuga/.ansible/collections/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualnetwork.py
+2020-12-13 23:17:55,979 p=3803 u=leonardopuga n=ansible | <127.0.0.1> PUT /home/leonardopuga/.ansible/tmp/ansible-local-3710obi_gi48/tmpq34ogm18 TO /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901475.7575204-3803-242032684488046/AnsiballZ_azure_rm_virtualnetwork.py
+2020-12-13 23:17:55,979 p=3803 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901475.7575204-3803-242032684488046/ /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901475.7575204-3803-242032684488046/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:17:55,986 p=3803 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c '/home/leonardopuga/ansible-controller/bin/python /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901475.7575204-3803-242032684488046/AnsiballZ_azure_rm_virtualnetwork.py && sleep 0'
+2020-12-13 23:17:57,258 p=3803 u=leonardopuga n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/leonardopuga/.ansible/tmp/ansible-tmp-1607901475.7575204-3803-242032684488046/ > /dev/null 2>&1 && sleep 0'
+2020-12-13 23:17:57,274 p=3710 u=leonardopuga n=ansible | ok: [localhost] => (item={'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}) => {
+    "ansible_loop_var": "item",
+    "changed": false,
+    "check_mode": false,
+    "invocation": {
+        "module_args": {
+            "ad_user": null,
+            "address_prefixes": "10.0.0.0/16",
+            "address_prefixes_cidr": [
+                "10.0.0.0/16"
+            ],
+            "adfs_authority_url": null,
+            "api_profile": "latest",
+            "append_tags": true,
+            "auth_source": "auto",
+            "cert_validation_mode": null,
+            "client_id": null,
+            "cloud_environment": "AzureCloud",
+            "dns_servers": null,
+            "location": null,
+            "name": "vnet-auto-ansible",
+            "password": null,
+            "profile": null,
+            "purge_address_prefixes": false,
+            "purge_dns_servers": false,
+            "resource_group": "vars.rg",
+            "secret": null,
+            "state": "present",
+            "subscription_id": null,
+            "tags": null,
+            "tenant": null
+        }
+    },
+    "item": {
+        "add_pref": "10.0.0.0/16",
+        "name": "vnet-auto-ansible"
+    },
+    "state": {
+        "address_prefixes": [
+            "10.0.0.0/16"
+        ],
+        "etag": "W/\"0302d2ef-44a9-4210-aabd-d09b3fd5f4fd\"",
+        "id": "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible",
+        "location": "westeurope",
+        "name": "vnet-auto-ansible",
+        "provisioning_state": "Succeeded",
+        "tags": {},
+        "type": "Microsoft.Network/virtualNetworks"
+    }
+}
+2020-12-13 23:17:57,286 p=3710 u=leonardopuga n=ansible | TASK [azrm-vnet : debug] *************************************************************************************************************************************
+2020-12-13 23:17:57,306 p=3710 u=leonardopuga n=ansible | ok: [localhost] => {
+    "msg": "VNets creation output: {'results': [{'changed': False, 'state': {'id': '/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/vars.rg/providers/Microsoft.Network/virtualNetworks/vnet-auto-ansible', 'name': 'vnet-auto-ansible', 'location': 'westeurope', 'type': 'Microsoft.Network/virtualNetworks', 'tags': {}, 'provisioning_state': 'Succeeded', 'etag': 'W/\"0302d2ef-44a9-4210-aabd-d09b3fd5f4fd\"', 'address_prefixes': ['10.0.0.0/16']}, 'check_mode': False, 'invocation': {'module_args': {'resource_group': 'vars.rg', 'name': 'vnet-auto-ansible', 'address_prefixes': '10.0.0.0/16', 'address_prefixes_cidr': ['10.0.0.0/16'], 'auth_source': 'auto', 'cloud_environment': 'AzureCloud', 'api_profile': 'latest', 'append_tags': True, 'state': 'present', 'purge_address_prefixes': False, 'purge_dns_servers': False, 'profile': None, 'subscription_id': None, 'client_id': None, 'secret': None, 'tenant': None, 'ad_user': None, 'password': None, 'cert_validation_mode': None, 'adfs_authority_url': None, 'tags': None, 'location': None, 'dns_servers': None}}, 'failed': False, 'item': {'name': 'vnet-auto-ansible', 'add_pref': '10.0.0.0/16'}, 'ansible_loop_var': 'item'}], 'msg': 'All items completed', 'changed': False}"
+}
+2020-12-13 23:17:57,316 p=3710 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:17:57,325 p=3710 u=leonardopuga n=ansible | META: ran handlers
+2020-12-13 23:17:57,326 p=3710 u=leonardopuga n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2020-12-13 23:17:57,327 p=3710 u=leonardopuga n=ansible | localhost                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
