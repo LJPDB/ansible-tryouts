@@ -2,8 +2,9 @@
   #hosts: digoc
   #hosts: redhat
   hosts: localhost
-  become: yes
-  become_user: leonardopuga
+  #hosts: win
+  #become: yes
+  #become_user: leonardopuga
   no_log: False
   gather_facts: False
   #ask_become_pass: AnsibleBastion01.
@@ -11,15 +12,18 @@
     var1: value1
     var2: value2
     ping: False
-    createuser: False
-    restart: False
+    createwinuser: False
+    createlinuxuser: False
+    restart_redhat: False
     poweroff: False
     poweron: False
-    createvm: True
-    #subscription_id: 45d75553-0f88-4efd-b859-050ec7ab4fe7
-    #client_id: c2acf85a-f417-499f-9926-17823d127d8c
-    #secret: pV_mFMamitKCrF__RmWxZ1Aqz.X4SbfGej
-    #tenant: 405baca0-0b2e-4d29-89a4-bfa5acb1a117
+    createvm: False
+    restart_winserver: False
+    get_az_vm_win_publicip_facts: True
+    subscription_id: 45d75553-0f88-4efd-b859-050ec7ab4fe7
+    client_id: c2acf85a-f417-499f-9926-17823d127d8c
+    secret: pV_mFMamitKCrF__RmWxZ1Aqz.X4SbfGej
+    tenant: 405baca0-0b2e-4d29-89a4-bfa5acb1a117
   tasks:
     - name: Pinging servers
       ping:
@@ -27,18 +31,19 @@
       when: vars.ping
       delegate_to: localhost
 
-    - name: create user
+    - name: create linux user
       user:
         name: usertest
         state: present
-      when: vars.createuser
+      when: vars.createlinuxuser
 
+    
     - name: Restart Redhat server
       azure_rm_virtualmachine:
         resource_group: rg-ansible
         name: vm-manual-redhat-1
         restarted: yes
-      when: vars.restart
+      when: vars.restart_redhat
       delegate_to: localhost
 
     - name: PowerOff Redhat VM
@@ -73,6 +78,35 @@
         #public_ip_allocation_method: Static
         remove_on_absent: ["all"]
       when: vars.createvm
+
+    - name: Get Facts from WinServer public IP
+      #hosts: azure
+      #connection: local
+      azure_rm_publicipaddress_info:
+        resource_group: rg-ansible
+        name: vm-manual-winserver-1
+      register: az_vm_publicip
+      when: vars.get_az_vm_win_publicip_facts
+      #delegate_to: localhost
+
+    - name: Restart WinServer
+      azure_rm_virtualmachine:
+        resource_group: rg-ansible
+        name: vm-manual-winserver-1
+        restarted: yes
+      when: vars.restart_winserver
+      delegate_to: localhost
+
+    - name: create windows user
+      win_user:
+        name: usertest
+        password: "AnsibleInventory01."
+        state: present
+      when: vars.createwinuser
+
+    - debug:
+        msg: "Public IP facts from WinServer AZ VM: {{ az_vm_publicip }}"
+      when: vars.get_az_vm_win_publicip_facts
 
     - debug:
         msg:

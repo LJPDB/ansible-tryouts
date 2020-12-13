@@ -1,6 +1,6 @@
 [win]
-10.0.0.4
-#51.103.25.29
+#10.0.0.4
+13.69.24.127
 
 [redhat]
 13.80.24.113
@@ -13,3 +13,8 @@
 
 #[all:vars]
 #ansible_ssh_connection=ssh ansible_ssh_user=myuser ansible_ssh_private_key_file=~/.ssh/id_rsa
+[all:vars]
+subscription_id=45d75553-0f88-4efd-b859-050ec7ab4fe7
+client_id=c2acf85a-f417-499f-9926-17823d127d8c
+secret=pV_mFMamitKCrF__RmWxZ1Aqz.X4SbfGej
+tenant=405baca0-0b2e-4d29-89a4-bfa5acb1a117

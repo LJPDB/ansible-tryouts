@@ -1,0 +1,64 @@
+- name: Playing with remote Azure WinServer...
+  #hosts: digoc
+  #hosts: redhat
+  hosts: localhost
+  connection: local
+  #hosts: win
+  #become: yes
+  #become_user: leonardopuga
+  no_log: False
+  gather_facts: False
+  #ask_become_pass: AnsibleBastion01.
+  vars:
+    ping: False
+    createwinuser: False
+    poweroff: False
+    poweron: False
+    createvm: False
+    restart_winserver: False
+    get_az_vm_win_publicip_facts: True
+    subscription_id: 45d75553-0f88-4efd-b859-050ec7ab4fe7
+    client_id: c2acf85a-f417-499f-9926-17823d127d8c
+    secret: pV_mFMamitKCrF__RmWxZ1Aqz.X4SbfGej
+    tenant: 405baca0-0b2e-4d29-89a4-bfa5acb1a117
+  tasks:
+    - name: Pinging WinServer
+      win_ping:
+        data: pong
+      when: vars.ping
+      delegate_to: localhost
+
+    - name: Get Facts from WinServer public IP
+      #hosts: azure
+      #connection: local
+      azure_rm_publicipaddress_info:
+        resource_group: rg-ansible
+        name: vm-manual-winserver-1
+      register: az_vm_publicip
+      when: vars.get_az_vm_win_publicip_facts
+      #delegate_to: localhost
+
+    - name: Restart WinServer
+      azure_rm_virtualmachine:
+        resource_group: rg-ansible
+        name: vm-manual-winserver-1
+        restarted: yes
+      when: vars.restart_winserver
+      delegate_to: localhost
+
+    - name: create WinServer user
+      win_user:
+        name: usertest
+        password: "AnsibleInventory01."
+        state: present
+      when: vars.createwinuser
+
+    - debug:
+        msg: "Public IP facts from WinServer AZ VM: {{ az_vm_publicip }}"
+      when: vars.get_az_vm_win_publicip_facts
+
+
+#- debug:
+#    msg: "var1"
+      
+
