@@ -1,0 +1,12 @@
+- name: Restart Azure VMs
+  azure_rm_virtualmachine:
+    resource_group: "{{item.rg}}"
+    name: "{{item.name}}"
+    restarted: yes
+  loop: "{{virtualmachines}}"
+  register: restart_output
+  when: vars.restart_winserver
+  delegate_to: localhost
+
+- debug:
+    msg: "Restart output: \n {{restart_output}}"

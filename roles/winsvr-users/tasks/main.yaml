@@ -1,0 +1,11 @@
+- name: create WinServer user
+  win_user:
+    name: "{{item.username}}"
+    password: "{{item.password}}"
+    state: "{{item.state}}"
+  loop: "{{users}}"
+  register: useroutput
+  when: vars.createwinuser
+
+- debug:
+    msg: "Output from user creation: {{useroutput}}"

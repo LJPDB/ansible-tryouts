@@ -1,0 +1,4 @@
+users:
+  - username: testuser
+    password: "AnsibleBastion01."
+    state: present  

@@ -1,0 +1,7 @@
+virtualmachines:
+  - rg: rg-ansible
+    name: vm-manual-winserver-1
+  
+  - rg: rg-ansible
+    name: vm-manual-redhat-1
+

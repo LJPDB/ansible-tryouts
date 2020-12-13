@@ -1,2 +1,3 @@
 /virtenvs
 .DS_Store
+ansible.log
