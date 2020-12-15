@@ -11,9 +11,11 @@
     public_ip_name: publicip-auto-ansible
     alloc_method: Static
     nsg_name: nsg-auto-ansible
+    nic_name: nic-auto-ansible
   roles:
     - azrm-rg
     - azrm-vnet
     - azrm-subnet
     - azrm-publicip
     - azrm-nsg
+    - azrm-nic

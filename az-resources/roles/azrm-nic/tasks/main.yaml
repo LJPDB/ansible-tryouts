@@ -1,0 +1,15 @@
+- name: Create NIC - "{{item.name}}"
+  azure_rm_networkinterface:
+    resource_group: "{{item.resource_group}}"
+    name: "{{item.name}}"
+    virtual_network: "{{item.virtual_network}}"
+    subnet: "{{item.subnet}}"
+    public_ip_name: "{{item.public_ip_name}}"
+    security_group: "{{item.security_group}}"
+  loop: "{{nics}}"
+  register: nics
+  
+- debug:
+    msg: "NICs creation output: {{nics}}"
+
+    

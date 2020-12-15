@@ -1,0 +1,7 @@
+nics:
+  - name: "{{vars.nic_name}}"
+    resource_group: "{{vars.rg}}"
+    virtual_network: "{{vars.vnet_name}}"
+    subnet: "{{vars.subnet_name}}"
+    public_ip_name:  "{{vars.public_ip_name}}"
+    security_group: "{{vars.nsg_name}}"
