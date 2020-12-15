@@ -1,4 +1,4 @@
 rgs:
   - name: "{{vars.rg}}"
-    location: westeurope
+    region: "{{vars.region}}"
 

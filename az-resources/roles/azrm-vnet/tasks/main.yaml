@@ -1,4 +1,4 @@
-- name: Create virtual network
+- name: Create virtual network - "{{item.name}}"
   azure_rm_virtualnetwork:
     resource_group: "{{vars.rg}}"
     name: "{{item.name}}"

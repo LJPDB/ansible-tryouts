@@ -1,4 +1,4 @@
-- name: Create Sub network
+- name: Create SubNet - "{{item.name}}"
   azure_rm_subnet:
     resource_group: "{{vars.rg}}"
     name: "{{item.name}}"

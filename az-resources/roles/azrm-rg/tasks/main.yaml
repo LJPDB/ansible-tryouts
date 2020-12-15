@@ -1,8 +1,8 @@
 - name: Creating resource group - "{{ name }}"
   azure_rm_resourcegroup:
     name: "{{ item.name }}"
-    location: "{{ item.location }}"
+    location: "{{ item.region }}"
   register: rg_output
   loop: "{{ rgs }}"
 - debug:
-    var: rg_output
+    msg: "Resource Group creation output: {{rg_output}}"

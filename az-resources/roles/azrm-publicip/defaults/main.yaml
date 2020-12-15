@@ -1,0 +1,4 @@
+publicips:
+  - name: "{{vars.public_ip_name}}"
+    resource_group: "{{vars.rg}}"
+    allocation_method: "{{vars.alloc_method}}"

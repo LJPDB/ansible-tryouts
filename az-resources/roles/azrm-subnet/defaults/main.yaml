@@ -1,4 +1,4 @@
 subnets:
-  - name: "{{vars.subnetname}}"
-    add_pref: "10.0.1.0/24"
-    vnet: "{{vars.vnetname}}"
+  - name: "{{vars.subnet_name}}"
+    add_pref: "{{vars.subnet_prefix}}"
+    vnet: "{{vars.vnet_name}}"

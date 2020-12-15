@@ -2,10 +2,16 @@
   hosts: localhost
   connection: local
   vars:
+    region: westeurope
     rg: rg-auto-ansible
-    vnetname: vnet-auto-ansible
-    subnetname: subnet-auto-ansible
+    vnet_name: vnet-auto-ansible
+    vnet_prefix: "10.0.0.0/16"
+    subnet_name: subnet-auto-ansible
+    subnet_prefix: "10.0.1.0/24"
+    public_ip_name: publicip-auto-ansible
+    alloc_method: Static
   roles:
     - azrm-rg
     - azrm-vnet
     - azrm-subnet
+    - azrm-publicip

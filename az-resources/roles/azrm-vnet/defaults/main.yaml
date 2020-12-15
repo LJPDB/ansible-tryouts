@@ -1,4 +1,4 @@
 vnets:
-  - name: vnet-auto-ansible
-    add_pref: "10.0.0.0/16"
+  - name: "{{vars.vnet_name}}"
+    add_pref: "{{vars.vnet_prefix}}"
 

@@ -1,0 +1,10 @@
+- name: Create public IP address - "{{item.name}}"
+  azure_rm_publicipaddress:
+    resource_group: "{{item.resource_group}}"
+    allocation_method: "{{item.allocation_method}}"
+    name: "{{item.name}}"
+  loop: "{{publicips}}"
+  register: publicips
+  
+- debug:
+    msg: "PublicIPs creation output: {{publicips}}"
