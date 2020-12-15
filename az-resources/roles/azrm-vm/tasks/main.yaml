@@ -11,6 +11,7 @@
     network_interfaces: "{{item.network_interfaces}}"
     image:
       offer: "{{item.offer}}"
+      publisher: "{{item.publisher}}"
       sku: "{{item.sku}}"
       version: "{{item.version}}"
   loop: "{{vms}}"
