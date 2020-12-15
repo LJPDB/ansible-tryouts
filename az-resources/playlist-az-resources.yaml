@@ -4,14 +4,28 @@
   vars:
     region: westeurope
     rg: rg-auto-ansible
+    ##
     vnet_name: vnet-auto-ansible
     vnet_prefix: "10.0.0.0/16"
+    ##
     subnet_name: subnet-auto-ansible
     subnet_prefix: "10.0.1.0/24"
+    ##
     public_ip_name: publicip-auto-ansible
     alloc_method: Static
+    ##
     nsg_name: nsg-auto-ansible
+    ##
     nic_name: nic-auto-ansible
+    ##
+    vm_name: vm-auto-ansible
+    vm_size: Standard_DS1_v2
+    vm_admin_username: leonardopuga
+    vm_id_rsa_pub: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0NUDnY/R7Q/Nfs6PwHJNoma59NNJtul7umyqLKJM2dLZ0kDqvv7mOIHJOUFzxrxz01mhxWOP9FoKkgiej82ao8Vkt9xlLmLc3K9Jx8yy5KBjkVfeoCXV7xY4quvPeLZK70I6UBEbG8OrY2d2SzEi2J+uYalCkpi41fbzuY+sLw9ZzUmzik0Q8baOh+zgpMUaPkKbg1lB+ZJmXxmyAskkeqpko7W4x16nAhYzf21t1Ahox02iUTaIL1FxgN/2ZTP9V0sihZ2V1WWotvBHOebqszn/NvRhTTOA3Nol7zqKPuIecy5CiI721VV0JkyYsBA93aqHugBLipFRHNOa5kokZ7+NeUufTnXSjQQG0kJ0jM/DqRHY5iE/ifnZYXT//mwBpDchmMFq5YpgBoTv98TfLqRgVrQHZdKBApHVfrS812oXhDNBcwznzCNKq2C4tx55ik0giefHpvfEhcAzFevvWSUWAeQGVCP7KWXkveR89MJg3UWVdw0IMrk3/oaIK0U8raU6QdQ5GFcYnLYC0QGok9PoGN0DPloH6JDZ81SsVVY273XRpyqsyInOUZzQlALh0aOZA/I2QSedPO52tLrYR5M0n6csPdQmXif2CXz8f9RACaPTC7oS87JbrcpualFx1iJlHohSssKXqC1tqd8ALBrULkkYsbapgDBO5YY6fHw== leonardopuga@FVFC427UL414.home"
+    vm_image_offer: CentOS
+    vm_image_publisher: OpenLogic
+    vm_image_sku: '7.5'
+    vm_image_version: latest
   roles:
     - azrm-rg
     - azrm-vnet
@@ -19,3 +33,5 @@
     - azrm-publicip
     - azrm-nsg
     - azrm-nic
+    - azrm-vm
+    #- azrm-rg-delete

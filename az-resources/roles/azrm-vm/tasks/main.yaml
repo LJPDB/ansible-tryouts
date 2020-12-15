@@ -1,0 +1,20 @@
+- name: Create VMs - "{{vms.name}}"
+  azure_rm_virtualmachine:
+    resource_group: "{{item.resource_group}}"
+    name: "{{item.name}}"
+    vm_size: "{{item.vm_size}}"
+    admin_username: "{{item.admin_username}}"
+    ssh_password_enabled: false
+    ssh_public_keys:
+      - path: /home/azureuser/.ssh/authorized_keys
+        key_data: "{{item.key_data}}"
+    network_interfaces: "{{item.network_interfaces}}"
+    image:
+      offer: "{{item.offer}}"
+      sku: "{{item.sku}}"
+      version: "{{item.version}}"
+  loop: "{{vms}}"
+  register: vms
+  
+- debug:
+    msg: "VMs creation output: {{vms}}"

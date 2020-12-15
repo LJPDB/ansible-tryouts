@@ -1,0 +1,11 @@
+vms:
+  - name: "{{vars.vm_name}}"
+    resource_group: "{{vars.rg}}"
+    vm_size: "{{vars.vm_size}}"
+    admin_username: "{{vars.vm_admin_username}}"
+    key_data: "{{vars.vm_id_rsa_pub}}"
+    network_interfaces: "{{vars.nic_name}}"
+    offer: "{{vars.vm_image_offer}}"
+    publisher: "{{vars.vm_image_publisher}}"
+    sku: "{{vars.vm_image_sku}}"
+    version: "{{vars.vm_image_version}}"

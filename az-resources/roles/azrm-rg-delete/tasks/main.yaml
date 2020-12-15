@@ -1,0 +1,7 @@
+- name: Creating resource group - "{{ name }}"
+  azure_rm_resourcegroup:
+    name: "{{ rg.name }}"
+    state: "{{ rg.state }}"
+  register: rg_deletion_output
+- debug:
+    msg: "Resource Group creation output: {{rg_deletion_output}}"
