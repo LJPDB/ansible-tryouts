@@ -3,7 +3,9 @@
   connection: local
   vars:
     rg: rg-auto-ansible
+    vnetname: vnet-auto-ansible
+    subnetname: subnet-auto-ansible
   roles:
     - azrm-rg
     - azrm-vnet
-   
+    - azrm-subnet
