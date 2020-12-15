@@ -1,0 +1,18 @@
+- name: Create Network Security Group that allows SSH
+  azure_rm_securitygroup:
+    resource_group: "{{item.resource_group}}"
+    name: "{{item.name}}"
+    #This part must be think of as something custom defined and pass as param/file or be loop over something else..
+    rules:
+      - name: SSH
+        protocol: Tcp
+        destination_port_range: 22
+        access: Allow
+        priority: 1001
+        direction: Inbound
+    #########################
+  loop: "{{nsgs}}"
+  register: nsgs    
+
+- debug:
+    msg: "NSGs creation output: {{nsgs}}"

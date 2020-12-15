@@ -1,0 +1,3 @@
+nsgs:
+  - name: "{{vars.nsg_name}}"
+    resource_group: "{{vars.rg}}"
