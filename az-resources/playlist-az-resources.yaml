@@ -31,8 +31,8 @@
     vhd_location: westeurope
     vhd_create_option: import
     vhd_source_uri: https://vmautoansible2930.blob.core.windows.net/vhds/vm-auto-ansible.vhd
-    vhd_os_type: CentOS
-    vhd_storage_account_type: Standard_SSD
+    vhd_os_type: linux
+    vhd_storage_account_type: StandardSSD_LRS
   roles:
     - azrm-rg
     - azrm-vnet
@@ -41,4 +41,5 @@
     - azrm-nsg
     - azrm-nic
     - azrm-vm
+    - azrm-vhd
     #- azrm-rg-delete
