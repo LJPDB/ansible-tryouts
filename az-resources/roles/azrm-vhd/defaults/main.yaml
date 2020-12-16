@@ -6,4 +6,5 @@ vhds:
     source_uri: "{{vars.vhd_source_uri}}"
     os_type: "{{vars.vhd_os_type}}"
     storage_account_type: "{{vars.vhd_storage_account_type}}"
+    storage_account_id: "{{vars.vhd_storage_account_id}}"
 

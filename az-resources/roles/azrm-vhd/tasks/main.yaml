@@ -7,6 +7,7 @@
     source_uri: "{{item.source_uri}}"
     os_type: "{{item.os_type}}"
     storage_account_type: "{{item.storage_account_type}}"
+    storage_account_id: "{{item.storage_account_id}}"
   loop: "{{vhds}}"
   register: vhds
   

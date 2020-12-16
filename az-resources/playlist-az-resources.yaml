@@ -33,6 +33,7 @@
     vhd_source_uri: https://vmautoansible2930.blob.core.windows.net/vhds/vm-auto-ansible.vhd
     vhd_os_type: linux
     vhd_storage_account_type: StandardSSD_LRS
+    vhd_storage_account_id: "/subscriptions/45d75553-0f88-4efd-b859-050ec7ab4fe7/resourceGroups/rg-auto-ansible/providers/Microsoft.Storage/storageAccounts/vmautoansible2930"
   roles:
     - azrm-rg
     - azrm-vnet
