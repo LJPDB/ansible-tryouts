@@ -1,0 +1,9 @@
+vhds:
+  - name: "{{vars.vhd_name}}"
+    resource_group: "{{vars.rg}}"
+    location: "{{vars.vhd_location}}"
+    create_option: "{{vars.vhd_create_option}}"
+    source_uri: "{{vars.vhd_source_uri}}"
+    os_type: "{{vars.vhd_os_type}}"
+    storage_account_type: "{{vars.vhd_storage_account_type}}"
+

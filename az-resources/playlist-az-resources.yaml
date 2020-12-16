@@ -26,6 +26,13 @@
     vm_image_publisher: OpenLogic
     vm_image_sku: '7.5'
     vm_image_version: latest
+    ##
+    vhd_name: vhd_auto_ansible
+    vhd_location: westeurope
+    vhd_create_option: import
+    vhd_source_uri: https://vmautoansible2930.blob.core.windows.net/vhds/vm-auto-ansible.vhd
+    vhd_os_type: CentOS
+    vhd_storage_account_type: Standard_SSD
   roles:
     - azrm-rg
     - azrm-vnet

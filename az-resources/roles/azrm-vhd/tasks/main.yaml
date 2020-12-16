@@ -1,0 +1,14 @@
+- name: Create managed operating system disk from page blob
+  azure_rm_manageddisk:
+    name: "{{item.name}}"
+    location: "{{item.location}}"
+    resource_group: "{{item.resource_group}}"
+    create_option: "{{item.create_option}}"
+    source_uri: "{{item.source_uri}}"
+    os_type: "{{item.os_type}}"
+    storage_account_type: "{{item.storage_account_type}}"
+  loop: "{{vhds}}"
+  register: vhds
+  
+- debug:
+    msg: "VHDs creation output: {{vhds}}"
