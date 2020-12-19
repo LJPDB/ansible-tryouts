@@ -6,3 +6,13 @@
 - debug:
     msg: "Get all VMs by RG output: {{vmsgetallbyrg}}"
   when: vars.vm_get_by_rg
+
+- name: Get by RG and VM name - "RG -> {{vars.rg}} /\ {{vars.vm_name}}"
+  azure_rm_virtualmachine_info:
+    resource_group: "{{vars.rg}}"
+    name: "{{vars.vm_name}}"
+  when: vars.vm_get_by_rg_name
+  register: vmsgetbyrgname
+- debug:
+    msg: "Get VM {{vars.vm_name}} in RG {{vars.rg}} output: {{vmsgetbyrgname}}"
+  when: vars.vm_get_by_rg_name
