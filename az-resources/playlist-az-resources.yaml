@@ -26,6 +26,9 @@
     vm_image_publisher: OpenLogic
     vm_image_sku: '7.5'
     vm_image_version: latest
+    vm_create: False
+    vm_start: False
+    vm_stop: True
     ##
     vhd_name: vhd_auto_ansible
     vhd_location: westeurope

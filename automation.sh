@@ -37,7 +37,7 @@ ansible-galaxy collection install azure.azcollection
 # Install required modules for Ansible on Azure
 wget https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt
 
-# Install Ansible modules
+# Install Ansible modules => i think this solves the problem with 'ansible[azure] (azure="2.0.0rcd") error in ansible'
 sudo pip3 install -r requirements-azure.txt
 
 
@@ -56,8 +56,13 @@ sudo apt-get install python3-venv
 
 python3 -m venv ansible-controller
 source ansible-controller/bin/activate
-
+#try to figure out if this command:
 pip install "azure==2.0.0rc5"
+#or this one should be run:
+pip install ansible[azure] --upgrade --force
+#or this one:
+sudo pip install "azure==2.0.0rc5"
+#
 pip install "pywinrm>=0.2.2"
 pip install msrestazure
 pip install msrest
