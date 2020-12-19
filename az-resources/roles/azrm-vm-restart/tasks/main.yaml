@@ -1,0 +1,11 @@
+- name: Restart VM - "{{vars.vm_name}}"
+  azure_rm_virtualmachine:
+    resource_group: "{{item.resource_group}}"
+    name: "{{item.name}}"
+    restarted: yes
+  loop: "{{vms_restart}}"
+  when: vars.vm_restart
+  register: vmrestart
+- debug:
+    msg: "Restarting VM output: {{vmrestart}}"
+  when: vars.vm_restart

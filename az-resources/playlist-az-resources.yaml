@@ -29,12 +29,13 @@
     vm_create: False
     vm_start: False
     vm_stop: False
+    vm_restart: True
     vm_get_by_rg: False
     vm_get_by_rg_name: False
-    vm_get_by_rg_tags: True
+    vm_get_by_rg_tags: False
     vm_tag1: test:tag1test
     vm_tag2: _own_sa_
-    vm_get_publicip_rg: True
+    vm_get_publicip_rg: False
     ##
     vhd_name: vhd_auto_ansible
     vhd_location: westeurope
@@ -56,4 +57,5 @@
     - azrm-vm-stop
     - azrm-vm-start
     - azrm-vm-getall-rg
+    - azrm-vm-restart
     #- azrm-rg-delete
