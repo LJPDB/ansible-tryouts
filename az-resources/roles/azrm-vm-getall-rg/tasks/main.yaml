@@ -1,0 +1,8 @@
+- name: Get all VMs by RG - "{{vars.vm_name}}"
+  azure_rm_virtualmachine_info:
+    resource_group: "{{vars.rg}}"
+  when: vars.vm_get_by_rg
+  register: vmsgetallbyrg
+- debug:
+    msg: "Get all VMs by RG output: {{vmsgetallbyrg}}"
+  when: vars.vm_get_by_rg

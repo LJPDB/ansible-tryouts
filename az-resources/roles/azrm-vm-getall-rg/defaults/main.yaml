@@ -1,0 +1,2 @@
+vms_all_by_rg:
+  - resource_group: "{{vars.rg}}"
