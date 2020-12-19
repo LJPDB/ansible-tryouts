@@ -7,7 +7,7 @@
     msg: "Get all VMs by RG output: {{vmsgetallbyrg}}"
   when: vars.vm_get_by_rg
 
-- name: Get by RG and VM name - "RG -> {{vars.rg}} /\ {{vars.vm_name}}"
+- name: Get by RG and VM name - "RG -> {{vars.rg}} /\ VM -> {{vars.vm_name}}"
   azure_rm_virtualmachine_info:
     resource_group: "{{vars.rg}}"
     name: "{{vars.vm_name}}"
@@ -16,3 +16,15 @@
 - debug:
     msg: "Get VM {{vars.vm_name}} in RG {{vars.rg}} output: {{vmsgetbyrgname}}"
   when: vars.vm_get_by_rg_name
+
+- name: Get by RG and VM tags - "RG -> {{vars.rg}} /\ Tags -> t1={{vars.vm_tag1}} t2={{vars.vm_tag2}}"
+  azure_rm_virtualmachine_info:
+    resource_group: "{{vars.rg}}"
+    tags: 
+      - "{{vars.vm_tag1}}"
+      - "{{vars.vm_tag2}}"
+  when: vars.vm_get_by_rg_tags
+  register: vmsgetbyrgtags
+- debug:
+    msg: "Get VM with tags t1={{vars.vm_tag1}} t2={{vars.vm_tag2}} in RG {{vars.rg}} output: {{vmsgetbyrgtags}}"
+  when: vars.vm_get_by_rg_tags
