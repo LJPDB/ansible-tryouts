@@ -27,8 +27,8 @@
     vm_image_sku: '7.5'
     vm_image_version: latest
     vm_create: False
-    vm_start: False
-    vm_stop: True
+    vm_start: True
+    vm_stop: False
     ##
     vhd_name: vhd_auto_ansible
     vhd_location: westeurope
@@ -48,4 +48,5 @@
     - azrm-vm
     - azrm-vhd
     - azrm-vm-stop
+    - azrm-vm-start
     #- azrm-rg-delete

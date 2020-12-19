@@ -1,0 +1,10 @@
+- name: Stop VM - "{{vars.vm_name}}"
+  azure_rm_virtualmachine:
+    resource_group: "{{item.resource_group}}"
+    name: "{{item.name}}"
+  loop: "{{vms_start}}"
+  when: vars.vm_start
+  register: vmstart
+- debug:
+    msg: "Starting VM output: {{vmstart}}"
+  when: vars.vm_start
