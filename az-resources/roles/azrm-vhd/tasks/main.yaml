@@ -13,3 +13,4 @@
   
 - debug:
     msg: "VHDs creation output: {{vhds}}"
+  when: vars.vhd_create
