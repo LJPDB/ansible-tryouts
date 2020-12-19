@@ -1,9 +1,9 @@
 - name: Stop VM - "{{vars.vm_name}}"
   azure_rm_virtualmachine:
     resource_group: "{{item.resource_group}}"
-    name: "{{item.vm_name}}"
+    name: "{{item.name}}"
     allocated: no
-  loop: "{{vms}}"
+  loop: "{{vms_stop}}"
   when: vars.vm_stop
   register: vmstop
 - debug:
