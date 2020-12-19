@@ -28,3 +28,12 @@
 - debug:
     msg: "Get VM with tags t1={{vars.vm_tag1}} t2={{vars.vm_tag2}} in RG {{vars.rg}} output: {{vmsgetbyrgtags}}"
   when: vars.vm_get_by_rg_tags
+
+- name: Get facts for all Public IPs within a resource groups - "{{vars.rg}}"
+  azure_rm_publicipaddress_facts:
+    resource_group: "{{vars.rg}}"
+  when: vars.vm_get_publicip_rg
+  register: vmsgetpublicipsrg
+- debug:
+    msg: "Get PublicIPs by RG output: {{vmsgetpublicipsrg}}"
+  when: vars.vm_get_publicip_rg

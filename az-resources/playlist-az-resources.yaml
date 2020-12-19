@@ -34,6 +34,7 @@
     vm_get_by_rg_tags: True
     vm_tag1: test:tag1test
     vm_tag2: _own_sa_
+    vm_get_publicip_rg: True
     ##
     vhd_name: vhd_auto_ansible
     vhd_location: westeurope
