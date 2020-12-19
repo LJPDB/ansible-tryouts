@@ -32,7 +32,7 @@
     vm_get_by_rg: False
     vm_get_by_rg_name: False
     vm_get_by_rg_tags: True
-    vm_tag1: test
+    vm_tag1: test:tag1test
     vm_tag2: _own_sa_
     ##
     vhd_name: vhd_auto_ansible
