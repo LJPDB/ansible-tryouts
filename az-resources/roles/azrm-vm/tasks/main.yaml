@@ -15,17 +15,18 @@
       sku: "{{item.sku}}"
       version: "{{item.version}}"
   loop: "{{vms}}"
-  when: "{{vars.vm_create}}"
+  when: vars.vm_create
   register: vms
 - debug:
     msg: "VMs creation output: {{vms}}"
-  when: "{{vars.vm_create}}"
+  when: vars.vm_create
 
 - name: Stop VM - "{{vars.vm_name}}"
   azure_rm_virtualmachine:
     resource_group: "{{item.resource_group}}"
     name: "{{vars.vm_name}}"
     allocated: no
+  loop: "{{vms}}"
   when: vars.vm_stop
   register: vmstop
 - debug:
