@@ -27,7 +27,7 @@
     vm_image_sku: '7.5'
     vm_image_version: latest
     vm_create: False
-    vm_start: True
+    vm_start: False
     vm_stop: False
     vm_get_by_rg: False
     vm_get_by_rg_name: False
