@@ -8,6 +8,7 @@
     os_type: "{{item.os_type}}"
     storage_account_type: "{{item.storage_account_type}}"
   loop: "{{vhds}}"
+  when: vars.vhd_create
   register: vhds
   
 - debug:
