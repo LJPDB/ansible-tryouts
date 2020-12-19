@@ -1,0 +1,3 @@
+vms:
+  - name: "{{vars.vm_name}}"
+    resource_group: "{{vars.rg}}"
