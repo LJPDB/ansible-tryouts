@@ -1,0 +1,26 @@
+- name: stdout from json file...
+  shell: cat "{{vars.jsonpath}}"
+  register: result
+
+- name: saving data to var...
+  set_fact:
+    json_data: "{{ result.stdout | from_json }}"
+
+- name: Getting var from json query...
+  set_fact:
+    var1: "{{ json_data | json_query(jmesquery) }}"
+  vars:
+    jmesquery: "var1"
+
+- debug:
+    msg: "JSON val from obj: {{vars.jsonobj | from_json}}"
+  
+- debug:
+    msg: "JSON form param: {{vars.jsonparam}}"
+  when: vars.jsonparam
+
+- debug:
+    msg: "JSON val from file: {{json_data}}"
+
+- debug:
+    msg: "Value from specific key from json: {{ var1 }}"

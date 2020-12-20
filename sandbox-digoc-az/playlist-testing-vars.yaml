@@ -1,0 +1,10 @@
+- name: Playing with JSON as param and from file...
+  hosts: localhost
+  connection: local
+  roles:
+    - json
+  vars:
+    jsonobj: '{ "play": "val" }'
+    jsonfile: "{{ lookup('file','/test.json') | from_json }}"
+    jsonparam: "{{ jsonparam }}"
+    jsonpath: ""
