@@ -1,16 +1,24 @@
+- name: Copy file with owner and permissions
+  copy:
+    src: redhat-packages.json
+    dest: redhat-packages.json
+    owner: leonardopuga
+
 - name: Getting packages list...
   shell: cat "{{vars.jsonpath}}"
   register: result
 
 - name: Save packages data to var...
   set_fact:
-    data: "{{ result.stdout | from_json }}"
-
-- name: Getting packages list...
-  set_fact:
-    packages: "{{ data | json_query(jmesquery) }}"
+    packages: "{{ result.stdout | from_json | json_query(jmesquery) }}"
   vars:
-    jmesquery: '*.packages[*]'
+    jmesquery: "packages[*]"
+
+    #- name: Getting packages list...
+    #set_fact:
+    #packages: "{{ data | from_json }}"
+    #vars:
+    #jmesquery: '*.data.packages[*]'
 
 - name: Manage packages VM - "{{vars.vm_name}}"
   yum:

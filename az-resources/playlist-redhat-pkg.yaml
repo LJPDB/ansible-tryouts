@@ -1,6 +1,7 @@
 - name: Manage RedHat packages...
   hosts: redhat
+  become_user: leonardopuga
   roles:
     - azrm-vm-redhat-pkgmng
   vars:
-    jsonpath: "/redhat-packages.json"
+    jsonpath: "redhat-packages.json"
