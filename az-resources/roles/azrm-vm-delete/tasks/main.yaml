@@ -1,0 +1,11 @@
+- name: Remove VM and all related resources - "{{vars.vm_name}}"
+  azure_rm_virtualmachine:
+    resource_group: "{{item.resource_group}}"
+    name: "{{item.name}}"
+    state: "absent"
+  loop: "{{vms_delete}}"
+  when: vars.vm_delete
+  register: vmdelete
+- debug:
+    msg: "Deleting VM output: {{vmdelete}}"
+  when: vars.vm_delete

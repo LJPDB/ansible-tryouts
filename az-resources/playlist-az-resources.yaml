@@ -36,6 +36,7 @@
     vm_tag1: test:tag1test
     vm_tag2: _own_sa_
     vm_get_publicip_rg: False
+    vm_delete: False
     ##
     vhd_name: vhd_auto_ansible
     vhd_location: westeurope
