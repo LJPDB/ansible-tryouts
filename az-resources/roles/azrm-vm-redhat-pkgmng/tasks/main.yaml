@@ -13,7 +13,8 @@
     packages: "{{ result.stdout | from_json | json_query(jmesquery) }}"
   vars:
     jmesquery: "packages[*]"
-
+- debug: 
+    msg: "packages from list: {{packages}}"
     #- name: Getting packages list...
     #set_fact:
     #packages: "{{ data | from_json }}"
@@ -21,6 +22,9 @@
     #jmesquery: '*.data.packages[*]'
 
 - name: Manage packages VM - "{{vars.vm_name}}"
+  become: yes
+  become_user: root
+  #become_method: sudo
   yum:
     name: "{{item.name}}"
     state: "{{item.state}}"
