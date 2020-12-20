@@ -1,0 +1,24 @@
+- name: Getting packages list...
+  shell: cat "{{vars.jsonpath}}"
+  register: result
+
+- name: Save packages data to var...
+  set_fact:
+    data: "{{ result.stdout | from_json }}"
+
+- name: Getting packages list...
+  set_fact:
+    packages: "{{ data | json_query(jmesquery) }}"
+  vars:
+    jmesquery: '*.packages[*]'
+
+- name: Manage packages VM - "{{vars.vm_name}}"
+  yum:
+    name: "{{item.name}}"
+    state: "{{item.state}}"
+  loop: "{{packages}}"
+  #when: vars.vm_stop
+  register: pkgs
+- debug:
+    msg: "Packages management: {{pkgs}}"
+  #when: vars.vm_stop
