@@ -12,9 +12,16 @@
     #dest: C:\\Users\\leonardopuga\\windows-updates.json
     #owner: leonardopuga
 
-- name: Getting Updates list...
-  win_command: cmd.exe /k type "{{pwd.stdout_lines[0]}}\\windows-updates.json"
-  register: result
+- name: Include var from JSON file path...
+  include_vars:
+    file: "{{pwd.stdout_lines[0]}}\\windows-updates.json"
+    name: update_types
+- debug:
+    msg: "JSON update types file from path: {{update_types}}"
+
+##- name: Getting Updates list...
+##  win_command: cmd.exe /k type "{{pwd.stdout_lines[0]}}\\windows-updates.json"
+##  register: result
 
 ##- name: Save Updates data to var...
 ##  set_fact:

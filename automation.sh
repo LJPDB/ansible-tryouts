@@ -64,6 +64,8 @@ pip install ansible[azure] --upgrade --force
 sudo pip install "azure==2.0.0rc5"
 #
 pip install "pywinrm>=0.2.2"
+pip install pywinrm
+#
 pip install msrestazure
 pip install msrest
 
