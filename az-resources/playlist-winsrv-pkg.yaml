@@ -1,0 +1,5 @@
+- name: Managing Windows Server packages and updates
+  hosts: win
+  no_log: False
+  roles:
+    - azrm-vm-winsvr-pkgmng
