@@ -8,11 +8,12 @@
 - name: Copy file with owner and permissions
   copy:
     src: windows-packages.json
-    dest: "{{pwd}}\\windows-updates.json"
+    dest: "{{pwd.stdout_lines[0]}}\\windows-updates.json"
+    #dest: C:\\Users\\leonardopuga\\windows-updates.json
     #owner: leonardopuga
 
 - name: Getting Updates list...
-  win_command: "type {{pwd}}\\windows-updates.json"
+  win_command: cmd.exe /k type "{{pwd.stdout_lines[0]}}\\windows-updates.json"
   register: result
 
 ##- name: Save Updates data to var...
