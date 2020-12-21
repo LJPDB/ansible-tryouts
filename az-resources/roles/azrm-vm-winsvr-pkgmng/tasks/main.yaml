@@ -2,12 +2,12 @@
   win_command: whoami
 
 - name: Check where i am...
-  win_command: echo %cd%
+  win_command: cmd.exe /k chdir
   register: pwd
 
 - name: Copy file with owner and permissions
   copy:
-    src: windows-updates.json
+    src: windows-packages.json
     dest: "{{pwd}}\\windows-updates.json"
     #owner: leonardopuga
 

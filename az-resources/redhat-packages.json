@@ -11,6 +11,10 @@
         {
             "name": "nginx",
             "state": "present"
-        }
+        },
+	{
+	    "name": "tree",
+	    "state": "absent"
+	}
     ]
 }

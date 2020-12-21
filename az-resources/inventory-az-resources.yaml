@@ -7,3 +7,4 @@
 ansible_user=leonardopuga
 ansible_password=AnsibleBastion01.
 ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
