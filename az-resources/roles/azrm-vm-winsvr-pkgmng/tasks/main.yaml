@@ -13,6 +13,7 @@
     #owner: leonardopuga
 
 - name: Include var from JSON file path...
+  delegate_to: remote
   include_vars:
     file: "{{pwd.stdout_lines[0]}}\\windows-updates.json"
     name: update_types
